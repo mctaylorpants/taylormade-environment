@@ -11,7 +11,7 @@ alias gl='git log'
 alias ga='git add'
 alias gc='git commit'
 alias gcm='git commit -m'
-
+alias gd='git diff'
 alias gp='git push'
 
 
@@ -21,6 +21,7 @@ alias rc='bin/rails c'
 alias rg='bin/rails g'
 alias rk='bin/rake'
 alias rr='bin/rake routes'
+alias bb='bundle'
 
 # CodeCore temp
 cd "/Users/alextaylor/Google Drive/CodeCore/assignments"
