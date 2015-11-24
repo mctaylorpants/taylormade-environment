@@ -22,6 +22,7 @@ alias rg='bin/rails g'
 alias rk='bin/rake'
 alias rr='bin/rake routes'
 alias bb='bundle'
+alias rt='bundle exec rspec'
 
 # CodeCore temp
 cd "/Users/alextaylor/Google Drive/CodeCore/assignments"
