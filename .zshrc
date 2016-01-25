@@ -107,4 +107,9 @@ alias bb='bundle'
 alias rt='bundle exec rspec'
 
 # CodeCore temp
-cd "/Users/alextaylor/Google Drive/CodeCore/assignments"
+cd "/Users/alextaylor/code"
+
+# Make autocomplete more like Bash
+# http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
+setopt noautomenu
+setopt nomenucomplete
