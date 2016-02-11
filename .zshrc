@@ -89,11 +89,12 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias gs='git status'
-alias gl='git log'
+alias gl='git log --pretty=oneline'
 alias ga='git add'
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gp='git push'
 
 
@@ -106,8 +107,8 @@ alias rr='bin/rake routes'
 alias bb='bundle'
 alias rt='bundle exec rspec'
 
-# CodeCore temp
-cd "/Users/alextaylor/code"
+# default directory
+cd "/Users/alextaylor/code/brewhouse"
 
 # Make autocomplete more like Bash
 # http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
