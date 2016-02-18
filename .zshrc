@@ -96,7 +96,7 @@ alias gcm='git commit -m'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gp='git push'
-
+alias gco='git checkout'
 
 # rails
 alias rs='bin/rails server'
