@@ -6,6 +6,10 @@
 set nocompatible
 filetype off
 
+" Automatically update file contents if they change on disk 
+" (useful for git checkouts)
+set autoread
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -13,9 +17,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Colors
-Plugin 'chriskempson/base16-vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'nanotech/jellybeans.vim'
 Plugin 'vim-scripts/SyntaxRange'
 Plugin 'vim-scripts/Liquid-Carbon'
 Plugin 'vim-scripts/moria'
@@ -41,7 +43,7 @@ Plugin 'flowtype/vim-flow'
 " Tools - Search
 Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'corntrace/bufexplorer'
 
 " Tools - Git
@@ -108,17 +110,21 @@ set directory=~/.vim/backup//
 
 " show in title bar
 set title
+set splitbelow
+set splitright
 
+set hlsearch
 " If colors not properly working, check this for solutions
 " http://stackoverflow.com/questions/7278267/incorrect-colors-with-vim-in-iterm2-using-solarized
 
+
 " colorscheme - NOT NEEDED IF RUNNING IN TERMINAL
-" set background=light
-"set background=dark
-"colorscheme solarized 
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-"let g:solarized_termcolors=256
+"set background=light
+set background=dark
+colorscheme solarized 
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+let g:solarized_termcolors=256
 
 " rainbow parentheses
 
@@ -254,5 +260,4 @@ nnoremap t6 6gt
 nnoremap t7 7gt
 nnoremap t8 8gt
 nnoremap t9 9gt
-
 
