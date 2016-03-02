@@ -97,6 +97,7 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias gp='git push'
 alias gco='git checkout'
+alias gf='git fetch'
 
 # rails
 alias rs='bin/rails server'
