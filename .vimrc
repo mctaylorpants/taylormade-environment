@@ -6,10 +6,7 @@
 set nocompatible
 filetype off
 
-" Automatically update file contents if they change on disk 
-" (useful for git checkouts)
-set autoread
-
+" Vundle begin
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -18,21 +15,12 @@ Plugin 'gmarik/Vundle.vim'
 
 " Colors
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-scripts/SyntaxRange'
-Plugin 'vim-scripts/Liquid-Carbon'
-Plugin 'vim-scripts/moria'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'heartsentwined/vim-emblem'
-Plugin 'fatih/vim-go'
-Plugin 'gkz/vim-ls'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'mtscout6/vim-cjsx'
-Plugin 'leafgarland/typescript-vim'
+"Plugin 'vim-scripts/SyntaxRange'
 
 " Tools
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
-Plugin 'majutsushi/tagbar'
+"Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/Rename2'
 Plugin 'tpope/vim-dispatch'
 Plugin 'nathanaelkane/vim-indent-guides'
