@@ -96,6 +96,7 @@ alias gcm='git commit -m'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gp='git push'
+alias gpoh='git push origin head'
 alias gco='git checkout'
 alias gf='git fetch'
 
@@ -107,6 +108,8 @@ alias rk='bin/rake'
 alias rr='bin/rake routes'
 alias bb='bundle'
 alias rt='bundle exec rspec'
+alias cc='bundle exec cucumber'
+alias rtcc='rt;cc'
 
 # default directory
 cd "/Users/alextaylor/code/brewhouse"
