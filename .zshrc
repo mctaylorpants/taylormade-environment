@@ -111,9 +111,6 @@ alias rt='bundle exec rspec'
 alias cc='bundle exec cucumber'
 alias rtcc='rt;cc'
 
-# default directory
-cd "/Users/alextaylor/code/brewhouse"
-
 # Make autocomplete more like Bash
 # http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
 setopt noautomenu
