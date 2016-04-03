@@ -143,15 +143,9 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
 " ctrlp
-let g:ctrlp_user_command = {
-  \ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files'],
-    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-    \ },
-  \ 'fallback': 'find %s -type f'
-\ }
+let g:ctrlp_max_files = 0
 let g:ctrlp_clear_cache_on_exit = 1
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_custom_ignore = '\.git$'
 
 " ack
 if executable('ack-grep')
@@ -193,7 +187,6 @@ autocmd InsertLeave *
 
 " CUSTOM KEY BINDINGS
 
-
 " remap soft bol and eol
 nnoremap <C-h> ^
 nnoremap <C-l> $
@@ -203,19 +196,6 @@ nnoremap <C-k> {
 " start/end of line
 map H ^
 map L $
-
-" rspec
-" map <Leader>rr :call RunCurrentSpecFile()<CR>
-" map <Leader>rR :call RunNearestSpec()<CR>
-" map <Leader>ra :call RunAllSpecs()<CR>
-" run with dispatch so that you don't have to wait
-" let g:rspec_command = "Dispatch bundle exec rspec {spec} --color"
-
-" vim-go
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
 
 " flow
 nnoremap <leader>f :FlowMake<cr>
