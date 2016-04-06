@@ -229,3 +229,6 @@ nnoremap t7 7gt
 nnoremap t8 8gt
 nnoremap t9 9gt
 
+" Allow clipboard access just with y and p. Needs vim 7.4 to work.
+" https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
+set clipboard=unnamed
