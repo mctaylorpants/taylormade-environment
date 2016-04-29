@@ -66,16 +66,26 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
 
-" Presentation
-
 call vundle#end()
-filetype plugin indent on
 " END VUNDLE
 "
+
+" Presentation
+
+filetype plugin indent on
 
 au BufRead,BufNewFile *.es6 setfiletype javascript
 
 syntax enable
+
+" If colors not properly working, check this for solutions
+" http://stackoverflow.com/questions/7278267/incorrect-colors-with-vim-in-iterm2-using-solarized
+set background=dark
+colorscheme solarized
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+let g:solarized_termcolors=16
+
 set laststatus=2
 set encoding=utf-8
 set number
@@ -102,17 +112,6 @@ set splitbelow
 set splitright
 
 set hlsearch
-" If colors not properly working, check this for solutions
-" http://stackoverflow.com/questions/7278267/incorrect-colors-with-vim-in-iterm2-using-solarized
-
-
-" colorscheme - NOT NEEDED IF RUNNING IN TERMINAL
-"set background=light
-set background=dark
-colorscheme solarized 
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-let g:solarized_termcolors=256
 
 " rainbow parentheses
 
