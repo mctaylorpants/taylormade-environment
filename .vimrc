@@ -27,6 +27,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'flowtype/vim-flow'
+Plugin 'SirVer/ultisnips'
 
 " Tools - Search
 Plugin 'scrooloose/nerdtree'
@@ -52,19 +53,15 @@ Plugin 'tpope/vim-surround'
 " Languages
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-markdown'
-Plugin 'slim-template/vim-slim'
-Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-rails'
 Plugin 'moll/vim-node'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'pangloss/vim-javascript'
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'burnettk/vim-angular'
 Plugin 'mxw/vim-jsx'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'isRuslan/vim-es6'
 
 call vundle#end()
 " END VUNDLE
@@ -158,6 +155,7 @@ endif
 " NERDtree
 map <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\/packages']
+let NERDTreeShowLineNumbers=1
 
 " airline (status line)
 let g:airline_left_sep=''
