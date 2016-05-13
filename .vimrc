@@ -28,6 +28,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'flowtype/vim-flow'
 Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-bundler'
 
 " Tools - Search
 Plugin 'scrooloose/nerdtree'
@@ -225,6 +226,12 @@ nnoremap t6 6gt
 nnoremap t7 7gt
 nnoremap t8 8gt
 nnoremap t9 9gt
+
+" vim-rspec commands
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " Allow clipboard access just with y and p. Needs vim 7.4 to work.
 " https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
