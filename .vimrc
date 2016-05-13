@@ -142,7 +142,7 @@ let g:syntastic_auto_loc_list=2
 " ctrlp
 let g:ctrlp_max_files = 0
 let g:ctrlp_clear_cache_on_exit = 1
-let g:ctrlp_custom_ignore = '\.git$'
+let g:ctrlp_custom_ignore = 'node_modules\|git'
 
 " ack
 if executable('ack-grep')
