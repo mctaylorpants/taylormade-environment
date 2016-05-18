@@ -110,3 +110,7 @@ alias rtcc='rt;cc'
 # http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
 setopt noautomenu
 setopt nomenucomplete
+
+# Custom keybindings
+bindkey '^S' down-line-or-history # ctrl+s
+bindkey '^A' up-line-or-history   # ctrl+a
