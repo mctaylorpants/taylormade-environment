@@ -24,7 +24,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/Rename2'
 Plugin 'tpope/vim-dispatch'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'jeetsukumaran/vim-buffergator'
+"Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'flowtype/vim-flow'
 Plugin 'SirVer/ultisnips'
