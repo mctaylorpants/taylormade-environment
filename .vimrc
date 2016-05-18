@@ -228,10 +228,10 @@ nnoremap t8 8gt
 nnoremap t9 9gt
 
 " vim-rspec commands
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>l :call RunLastSpec()<CR>
+nnoremap <Leader>a :call RunAllSpecs()<CR>
 
 " Allow clipboard access just with y and p. Needs vim 7.4 to work.
 " https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
