@@ -17,3 +17,4 @@
 	default = simple
 [core]
 	editor = /usr/local/bin/vim
+	excludesfile = /Users/alextaylor/.gitignore_global
