@@ -1,3 +1,6 @@
+# Path to settings repo
+export TAYLORMADE=/Users/alextaylor/code/taylormade-environment
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/alextaylor/.oh-my-zsh
 
@@ -114,3 +117,7 @@ setopt nomenucomplete
 # Custom keybindings
 bindkey '^S' down-line-or-history # ctrl+s
 bindkey '^A' up-line-or-history   # ctrl+a
+
+# keep track of installed Homebrew packages
+# run in a subprocess so it doesn't affect load time
+{ brew list -1 > $TAYLORMADE/homebrew_installed_packages } 2>/dev/null
