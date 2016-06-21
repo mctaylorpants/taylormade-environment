@@ -106,7 +106,7 @@ alias rk='bin/rake'
 alias rr='bin/rake routes'
 alias bb='bundle'
 alias rt='bin/rspec'
-alias cc='bin/cucumber'
+alias cc='bin/cucumber -f progress'
 alias rtcc='rt;cc'
 
 # Make autocomplete more like Bash
