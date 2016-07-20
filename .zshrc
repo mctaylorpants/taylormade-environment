@@ -108,6 +108,7 @@ alias bb='bundle'
 alias rt='bin/rspec'
 alias cc='bin/cucumber -f progress'
 alias rtcc='rt;cc'
+alias reset_test_db='bin/rake db:drop db:create db:migrate RAILS_ENV=test'
 
 # Make autocomplete more like Bash
 # http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
