@@ -17,7 +17,7 @@
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
 	<key>CheckTestRelease</key>
-	<true/>
+	<false/>
 	<key>ClosingHotkeySwitchesSpaces</key>
 	<true/>
 	<key>CommandSelection</key>
@@ -874,11 +874,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>646 346 491 274 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>464 1439 606 456 -244 900 1920 1177 </string>
+	<string>367 334 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>240 1651 384 129 -244 900 1920 1177 </string>
+	<string>632 211 400 129 0 0 1440 900 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>410 364 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-151 900 1340 706 -244 900 1920 1177 </string>
+	<string>289 10 717 860 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2 125 1140 752 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1625,12 +1627,18 @@
 			<string>/</string>
 		</dict>
 	</array>
+	<key>NoSyncConfirmBeta</key>
+	<true/>
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>74978953-C5D0-466C-BC9E-555ACFC81CD7</string>
 	<key>NoSyncLastTipTime</key>
-	<real>486922048.05724603</real>
+	<real>489301092.995565</real>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
+	<key>NoSyncSilenceAnnoyingBellAutomatically</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>486922027.51279002</real>
 	<key>NoSyncTimeOfLastPromo</key>
@@ -1641,6 +1649,21 @@
 	<array>
 		<string>000</string>
 		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+		<string>0009</string>
+		<string>0010</string>
+		<string>0011</string>
+		<string>0012</string>
+		<string>0013</string>
+		<string>0014</string>
+		<string>0015</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -1691,6 +1714,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/alextaylor/code/taylormade-environment/Library/Preferences</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -1706,11 +1731,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing.xml?shard=32</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=32</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-06-06T16:06:45Z</date>
+	<date>2016-06-30T00:16:25Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -4094,6 +4119,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.0</string>
+	<string>3.0.2</string>
 </dict>
 </plist>
