@@ -134,6 +134,7 @@ let g:rbpt_loadcmd_toggle = 0
 " syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
+let g:syntastic_cucumber_checkers = []
 
 " ctrlp
 let g:ctrlp_max_files = 0
