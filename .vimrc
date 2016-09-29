@@ -17,18 +17,16 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 
 " Tools
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/Rename2'
 Plugin 'tpope/vim-dispatch'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'flowtype/vim-flow'
-Plugin 'SirVer/ultisnips'
+Plugin 'neomake/neomake'
 Plugin 'tpope/vim-bundler'
 
 " Tools - Search
 Plugin 'scrooloose/nerdtree'
-Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'corntrace/bufexplorer'
 
@@ -59,6 +57,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'isRuslan/vim-es6'
+Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()
 " END VUNDLE
@@ -105,6 +104,13 @@ set title
 set splitbelow
 set splitright
 
+" custom status bar http://learnvimscriptthehardway.stevelosh.com/chapters/17.html
+:set statusline=%f         " Path to the file
+:set statusline+=%=        " Switch to the right side
+:set statusline+=%l:%c     " Current line and column
+:set statusline+=/         " Separator
+:set statusline+=%L        " Total lines
+
 set hlsearch
 
 " rainbow parentheses
@@ -132,9 +138,10 @@ let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 
 " syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
-let g:syntastic_cucumber_checkers = []
+" let g:syntastic_enable_signs=1
+" let g:syntastic_auto_loc_list=2
+" let g:syntastic_cucumber_checkers = []
+" let g:syntastic_javascript_checkers = ['eslint']
 
 " ctrlp
 let g:ctrlp_max_files = 0
@@ -154,10 +161,6 @@ endif
 map <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\/packages']
 let NERDTreeShowLineNumbers=1
-
-" airline (status line)
-let g:airline_left_sep=''
-let g:airline_right_sep=''
 
 " javascript-libraries-syntax
 " let g:used_javascript_libs = 'jquery,underscore,angularjs,angularui,jasmine'
@@ -233,3 +236,18 @@ nnoremap <Leader>a :call RunAllSpecs()<CR>
 " Allow clipboard access just with y and p. Needs vim 7.4 to work.
 " https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
 set clipboard=unnamed
+
+" jsx highlighting
+let g:jsx_ext_required = 0
+
+" neomake
+autocmd! BufWritePost,BufEnter * Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_error_sign = {
+      \ 'text': '>>',
+      \ 'texthl': 'ErrorMsg',
+      \ }
+let g:neomake_warning_sign = {
+      \ 'text': '>>',
+      \ 'texthl': 'NeomakeWarningSign'
+      \ }
