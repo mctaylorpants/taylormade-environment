@@ -4,6 +4,8 @@ export TAYLORMADE=/Users/alextaylor/code/taylormade-environment
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/alextaylor/.oh-my-zsh
 
+plugins=(git)
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -95,16 +97,9 @@ alias gf='git fetch'
 alias grbm='echo "Updating master..." && CURRENT_BRANCH=`git branch | grep "*" | cut -d " " -f 2` && gco master && git pull && gco $CURRENT_BRANCH'
 
 # rails
-alias rs='bin/rails server'
-alias rc='bin/rails c'
-alias rg='bin/rails g'
-alias rk='bin/rake'
-alias rr='bin/rake routes'
 alias bb='bundle'
-alias rt='bin/rspec'
-alias cc='bin/cucumber -f progress'
-alias rtcc='rt;cc'
-alias reset_test_db='bin/rake db:drop db:create db:migrate RAILS_ENV=test'
+alias zs='zeus s'
+
 
 # Make autocomplete more like Bash
 # http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
@@ -126,4 +121,3 @@ export NVM_DIR="/Users/alextaylor/.nvm"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
