@@ -1,8 +1,9 @@
 # Path to settings repo
 export TAYLORMADE=/Users/alextaylor/code/taylormade-environment
 
-# Path to your oh-my-zsh installation.
 export ZSH=/Users/alextaylor/.oh-my-zsh
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 plugins=(git)
 
@@ -53,9 +54,6 @@ plugins=(git)
 
 # User configuration
 
-#export PATH="/Users/alextaylor/.rvm/gems/ruby-2.2.3/bin:/Users/alextaylor/.rvm/gems/ruby-2.2.3@global/bin:/Users/alextaylor/.rvm/rubies/ruby-2.2.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/alextaylor/.rvm/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -80,9 +78,7 @@ export EDITOR='vim'
 # git
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-
+alias vim='nvim'
 alias gs='git status'
 alias gl='git log --pretty=oneline'
 alias ga='git add'
