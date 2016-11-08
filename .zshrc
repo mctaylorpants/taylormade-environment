@@ -3,6 +3,10 @@ export TAYLORMADE=/Users/alextaylor/code/taylormade-environment
 
 export ZSH=/Users/alextaylor/.oh-my-zsh
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+# initialize any secret env variables here
+source ~/.secrets
+
 eval "$(rbenv init -)"
 
 plugins=(git)
@@ -90,7 +94,7 @@ alias gp='git push'
 alias gpoh='git push origin head'
 alias gco='git checkout'
 alias gf='git fetch'
-alias grbm='echo "Updating master..." && CURRENT_BRANCH=`git branch | grep "*" | cut -d " " -f 2` && gco master && git pull && gco $CURRENT_BRANCH'
+alias grbm='echo "Updating master..." && CURRENT_BRANCH=`git branch | grep "*" | cut -d " " -f 2` && gco master && git pull && gco $CURRENT_BRANCH && grb master'
 
 # rails
 alias bb='bundle'

@@ -16,7 +16,7 @@
 [push]
 	default = simple
 [core]
-	editor = /usr/local/bin/vim
+	editor = /usr/local/bin/nvim
 	excludesfile = /Users/alextaylor/.gitignore_global
 [branch]
   autosetuprebase = always
