@@ -98,6 +98,7 @@ alias grbm='echo "Updating master..." && CURRENT_BRANCH=`git branch | grep "*" |
 
 # rails
 alias bb='bundle'
+alias be='bundle exec'
 alias zs='zeus s'
 
 
