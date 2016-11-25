@@ -1,0 +1,38 @@
+#!/usr/bin/ruby
+#
+## Extracts the JIRA ID from the current git branch
+#
+# Example (multiline):
+# * xx-123-my-branch-name
+#   ^^^^^^
+def prepend_ticket_to_commit_msg
+  commit_msg_file = ARGV[0]
+  commit_msg = File.open(commit_msg_file, 'r') {|f| f.readlines }
+
+  branches = `git branch`
+
+  if match = branches.match(/\* (?<branchname>\w+-\d+)/m)
+    branch_name = match['branchname'].upcase
+
+    first_line = commit_msg.shift
+    return if first_line.include?(branch_name) # git commit -m 'BILL-123 message goes here'
+
+    if first_line == "\n" # git commit
+      File.open(commit_msg_file, 'w') do |f|
+        f.puts "#{branch_name} " # with a space at the end
+        commit_msg.each do |line|
+          f.puts line
+        end
+      end
+    else # git commit -m "message without ticket number"
+      File.open(commit_msg_file, 'w') do |f|
+        f.puts "#{branch_name} #{first_line}" # prepend the branch name to the message
+        commit_msg.each do |line|
+          f.puts line
+        end
+      end
+    end
+  end
+end
+
+prepend_ticket_to_commit_msg
