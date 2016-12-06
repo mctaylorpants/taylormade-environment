@@ -29,6 +29,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'corntrace/bufexplorer'
+Plugin 'skwp/greplace.vim'
 
 " Tools - Git
 Plugin 'tpope/vim-fugitive'
@@ -103,6 +104,9 @@ set directory=~/.vim/backup//
 set title
 set splitbelow
 set splitright
+
+" always keep 20 lines of margin between the cursor and the top/bottom edges
+set so=20
 
 " custom status bar http://learnvimscriptthehardway.stevelosh.com/chapters/17.html
 :set statusline=%f         " Path to the file
