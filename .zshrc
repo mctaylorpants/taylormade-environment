@@ -115,3 +115,6 @@ export NVM_DIR="/Users/alextaylor/.nvm"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+#
+# Check if AWS keys need to be rotated
+`/usr/local/bin/aws_rotate_keys_scheduler.rb`
