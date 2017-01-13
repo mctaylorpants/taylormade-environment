@@ -4,9 +4,6 @@ export TAYLORMADE=/Users/alextaylor/code/taylormade-environment
 export ZSH=/Users/alextaylor/.oh-my-zsh
 export PATH="$HOME/.rbenv/bin:$PATH"
 
-# initialize any secret env variables here
-source ~/.secrets
-
 eval "$(rbenv init -)"
 
 plugins=(git)
