@@ -88,10 +88,12 @@ alias gcm='git commit -m'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gp='git push'
+alias gP='git pull'
 alias gpoh='git push origin head'
 alias gco='git checkout'
 alias gf='git fetch'
 alias grbm='echo "Updating master..." && CURRENT_BRANCH=`git branch | grep "*" | cut -d " " -f 2` && gco master && git pull && gco $CURRENT_BRANCH && grb master'
+alias gnb='git checkout master && git pull && git checkout -b '
 
 # rails
 alias bb='bundle'
