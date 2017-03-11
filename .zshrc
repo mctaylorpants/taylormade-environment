@@ -4,6 +4,9 @@ export TAYLORMADE=/Users/alextaylor/code/taylormade-environment
 export ZSH=/Users/alextaylor/.oh-my-zsh
 export PATH="$HOME/.rbenv/bin:$PATH"
 
+# for the aws eb CLI
+export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+
 eval "$(rbenv init -)"
 
 plugins=(git docker)
@@ -120,3 +123,4 @@ export NVM_DIR="/Users/alextaylor/.nvm"
 #
 # Check if AWS keys need to be rotated
 `/usr/local/bin/aws_rotate_keys_scheduler.rb`
+source ~/.zsh-kube-completion
