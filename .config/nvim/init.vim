@@ -17,10 +17,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 
 " Tools
-Plugin 'vim-scripts/Rename2'
-Plugin 'tpope/vim-dispatch'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'flowtype/vim-flow'
 Plugin 'neomake/neomake'
 Plugin 'tpope/vim-bundler'
 
@@ -28,12 +24,10 @@ Plugin 'tpope/vim-bundler'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'corntrace/bufexplorer'
-Plugin 'skwp/greplace.vim'
 
 " Tools - Git
 Plugin 'tpope/vim-fugitive'
-Plugin 'mhinz/vim-signify'
+Plugin 'airblade/vim-gitgutter'
 
 " Tools - Tab Completion
 Plugin 'ervandew/supertab'
@@ -49,14 +43,12 @@ Plugin 'tpope/vim-surround'
 " Languages
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-markdown'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'moll/vim-node'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'pangloss/vim-javascript'
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'mxw/vim-jsx'
-Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'isRuslan/vim-es6'
 Plugin 'elixir-lang/vim-elixir'
 
@@ -140,12 +132,6 @@ let g:rbpt_colorpairs = [
 
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
-
-" syntastic
-" let g:syntastic_enable_signs=1
-" let g:syntastic_auto_loc_list=2
-" let g:syntastic_cucumber_checkers = []
-" let g:syntastic_javascript_checkers = ['eslint']
 
 " ctrlp
 let g:ctrlp_max_files = 0
@@ -237,9 +223,13 @@ nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
 
+tnoremap <Esc> <C-\><C-n> " exit :terminal with Esc
+
 " Allow clipboard access just with y and p. Needs vim 7.4 to work.
 " https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
 set clipboard=unnamed
+
+set inccommand=split " live preview of substitutions
 
 " jsx highlighting
 let g:jsx_ext_required = 0
