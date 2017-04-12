@@ -97,12 +97,19 @@ alias gco='git checkout'
 alias gf='git fetch'
 alias grbm='echo "Updating master..." && CURRENT_BRANCH=`git branch | grep "*" | cut -d " " -f 2` && gco master && git pull && gco $CURRENT_BRANCH && grb master'
 alias gnb='git checkout master && git pull && git checkout -b '
+alias grbi='git rebase --interactive --autosquash' # override the default grbi in the git zsh plugin
+alias gcom='git checkout master && git pull'
 
 # rails
 alias bb='bundle'
 alias be='bundle exec'
 alias zs='zeus s'
 
+alias gimmec2='aws-ec2-list | grep webapp'
+
+# for bundler development
+# https://github.com/bundler/bundler/blob/master/doc/development/SETUP.md
+alias dbundle='RUBYOPT=-rpry BUNDLE_TRAMPOLINE_DISABLE=1 ruby -I /Users/alextaylor/code/bundler/bundler/lib /Users/alextaylor/code/bundler/bundler/exe/bundle'
 
 # Make autocomplete more like Bash
 # http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
