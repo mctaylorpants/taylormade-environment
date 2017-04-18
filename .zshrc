@@ -2,10 +2,11 @@
 export TAYLORMADE=/Users/alextaylor/code/taylormade-environment
 
 export ZSH=/Users/alextaylor/.oh-my-zsh
-export PATH="$HOME/.rbenv/bin:$PATH"
 
-# for the aws eb CLI
-export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/Library/Python/2.7/bin:$PATH" # for the aws eb CLI
+export PATH="/usr/local/sbin:$PATH" # recommended by `brew doctor`
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
 eval "$(rbenv init -)"
 
