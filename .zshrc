@@ -111,6 +111,9 @@ alias gimmec2='aws-ec2-list | grep webapp'
 # https://github.com/bundler/bundler/blob/master/doc/development/SETUP.md
 alias dbundle='RUBYOPT=-rpry BUNDLE_TRAMPOLINE_DISABLE=1 ruby -I /Users/alextaylor/code/bundler/bundler/lib /Users/alextaylor/code/bundler/bundler/exe/bundle'
 
+# make sure to use homebrew's ctags (https://gist.github.com/nazgob/1570678)
+alias ctags="`brew --prefix`/bin/ctags"
+
 # Make autocomplete more like Bash
 # http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
 setopt noautomenu
