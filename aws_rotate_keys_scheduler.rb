@@ -1,21 +1,20 @@
 #!/usr/bin/env ruby
 
 class AwsKeys
-  attr_reader :file, :last_modified, :cutoff_time
+  attr_reader :file, :last_modified
 
   def self.need_rotating?
     self.new.need_rotating?
   end
 
-  def initialize(file = default_keys_file, cutoff_time = three_months_ago)
+  def initialize(file = default_keys_file)
     @file = file
-    @cutoff_time = cutoff_time
 
     calculate_file_modification_time!
   end
 
   def need_rotating?
-    last_modified < cutoff_time
+    last_modified < three_months_ago # i.e. it's been modified in the last 3 months
   end
 
   private
@@ -39,6 +38,6 @@ class AwsKeys
 end
 
 if AwsKeys.need_rotating?
-  p "It's that time of year again! Rotating your AWS keys..."
+  puts "It's that time of year again! Rotating your AWS keys..."
   `aws-rotate-keys`
 end
