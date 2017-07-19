@@ -19,6 +19,8 @@ Plugin 'altercation/vim-colors-solarized'
 " Tools
 Plugin 'neomake/neomake'
 Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-rails'
+Plugin 'thoughtbot/vim-rspec'
 
 " Tools - Search
 Plugin 'scrooloose/nerdtree'
@@ -28,6 +30,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Tools - Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-git'
 
 " Tools - Tab Completion
 Plugin 'ervandew/supertab'
@@ -40,17 +43,8 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 
-" Languages
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-markdown'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'moll/vim-node'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'pangloss/vim-javascript'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'isRuslan/vim-es6'
-Plugin 'elixir-lang/vim-elixir'
+" Syntax highlighting (polyglot should do it all)
+Plugin 'sheerun/vim-polyglot'
 
 call vundle#end()
 " END VUNDLE
@@ -78,7 +72,7 @@ set number
 set nowrap
 
 " leader character
-let mapleader = "\\"
+let mapleader = "'"
 
 " whitespace
 set smarttab
@@ -110,7 +104,6 @@ set so=20
 set hlsearch
 
 " rainbow parentheses
-
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
@@ -152,9 +145,6 @@ map <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\/packages']
 let NERDTreeShowLineNumbers=1
 
-" javascript-libraries-syntax
-" let g:used_javascript_libs = 'jquery,underscore,angularjs,angularui,jasmine'
-
 " If 't_vb' is cleared and 'visualbell' is set, "
 " no beep and no flash will ever occur "
 set visualbell
@@ -184,9 +174,6 @@ nnoremap <C-k> {
 " start/end of line
 map H ^
 map L $
-
-" flow
-nnoremap <leader>f :FlowMake<cr>
 
 " window resizing
 nnoremap <Up> <C-w>-<C-w>-
@@ -222,6 +209,8 @@ nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
+
+map <Leader>b :Gblame<CR>
 
 tnoremap <Esc> <C-\><C-n> " exit :terminal with Esc
 
