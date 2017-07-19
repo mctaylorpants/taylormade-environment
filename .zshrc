@@ -64,7 +64,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -78,7 +78,7 @@ export EDITOR='vim'
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # git
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
@@ -106,11 +106,13 @@ alias bb='bundle'
 alias be='bundle exec'
 alias zs='zeus s'
 
-alias gimmec2='aws-ec2-list | grep webapp'
+#instance lookup alias
+alias prod='aws-ec2-list --region=us-east-1 | grep webapp'
+alias int='aws-ec2-list --region=us-west-1 | grep webapp'
 
 # for bundler development
 # https://github.com/bundler/bundler/blob/master/doc/development/SETUP.md
-alias dbundle='RUBYOPT=-rpry BUNDLE_TRAMPOLINE_DISABLE=1 ruby -I /Users/alextaylor/code/bundler/bundler/lib /Users/alextaylor/code/bundler/bundler/exe/bundle'
+alias dbundle='BUNDLE_TRAMPOLINE_DISABLE=1 ruby -I /Users/alextaylor/code/bundler/bundler/lib /Users/alextaylor/code/bundler/bundler/exe/bundle'
 
 # make sure to use homebrew's ctags (https://gist.github.com/nazgob/1570678)
 alias ctags="`brew --prefix`/bin/ctags"
@@ -135,3 +137,4 @@ export NVM_DIR="/Users/alextaylor/.nvm"
 # Check if AWS keys need to be rotated
 `/usr/local/bin/aws_rotate_keys_scheduler.rb`
 source ~/.zsh-kube-completion
+export KUBECONFIG=~/code/unbounce/unbox-project/kubeconfig
