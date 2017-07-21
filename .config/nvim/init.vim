@@ -234,3 +234,5 @@ let g:neomake_warning_sign = {
       \ 'text': '>>',
       \ 'texthl': 'NeomakeWarningSign'
       \ }
+
+command Readme set linebreak wrap
