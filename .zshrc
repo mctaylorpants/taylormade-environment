@@ -4,11 +4,12 @@ export TAYLORMADE=/Users/alextaylor/code/taylormade-environment
 export ZSH=/Users/alextaylor/.oh-my-zsh
 
 export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 export PATH="$HOME/Library/Python/2.7/bin:$PATH" # for the aws eb CLI
 export PATH="/usr/local/sbin:$PATH" # recommended by `brew doctor`
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
-
-eval "$(rbenv init -)"
+export PATH="./bin:$PATH" # export local bin after rbenv inits so we can override the shims (for bin/rspec, bin/rails, etc)
 
 plugins=(git docker)
 
@@ -51,7 +52,7 @@ plugins=(git docker)
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -103,8 +104,6 @@ alias gcom='git checkout master && git pull'
 
 # rails
 alias bb='bundle'
-alias be='bundle exec'
-alias zs='zeus s'
 
 #instance lookup alias
 alias prod='aws-ec2-list --region=us-east-1 | grep webapp'
