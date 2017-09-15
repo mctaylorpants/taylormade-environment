@@ -21,6 +21,8 @@ Plugin 'neomake/neomake'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-rails'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'guns/vim-sexp'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people.git'
 
 " Tools - Search
 Plugin 'scrooloose/nerdtree'
