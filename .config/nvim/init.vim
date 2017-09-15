@@ -214,3 +214,4 @@ let g:neomake_warning_sign = {
       \ }
 
 command Readme set linebreak wrap
+command Filename !echo % | pbcopy

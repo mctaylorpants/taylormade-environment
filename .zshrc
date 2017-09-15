@@ -86,6 +86,7 @@ alias zshconfig="vim ~/.zshrc"
 
 alias vim='nvim'
 alias gs='git status'
+alias gS='git show'
 alias gl='git log --pretty=oneline'
 alias ga='git add'
 alias gc='git commit -v'
@@ -107,7 +108,7 @@ alias bb='bundle'
 
 #instance lookup alias
 alias prod='aws-ec2-list --region=us-east-1 | grep webapp'
-alias int='aws-ec2-list --region=us-west-1 | grep webapp'
+alias int='aws-ec2-list --region=us-west-2 | grep webapp'
 
 # for bundler development
 # https://github.com/bundler/bundler/blob/master/doc/development/SETUP.md
