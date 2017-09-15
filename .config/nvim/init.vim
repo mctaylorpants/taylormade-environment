@@ -203,8 +203,7 @@ set inccommand=split " live preview of substitutions
 let g:jsx_ext_required = 0
 
 " neomake
-autocmd! BufWritePost,BufEnter * Neomake
-let g:neomake_javascript_enabled_makers = ['eslint']
+call neomake#configure#automake('rw', 1000)
 let g:neomake_error_sign = {
       \ 'text': '>>',
       \ 'texthl': 'ErrorMsg',
