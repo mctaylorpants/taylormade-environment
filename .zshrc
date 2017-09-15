@@ -117,6 +117,8 @@ alias dbundle='BUNDLE_TRAMPOLINE_DISABLE=1 ruby -I /Users/alextaylor/code/bundle
 # make sure to use homebrew's ctags (https://gist.github.com/nazgob/1570678)
 alias ctags="`brew --prefix`/bin/ctags"
 
+alias clj='lein repl'
+
 # Make autocomplete more like Bash
 # http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
 setopt noautomenu
