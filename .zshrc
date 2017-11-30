@@ -151,3 +151,5 @@ export KUBECONFIG=~/code/unbounce/unbox-project/kubeconfig
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/alextaylor/code/typescript-workshop-20171020/introduction-to-typescript/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/alextaylor/code/typescript-workshop-20171020/introduction-to-typescript/node_modules/tabtab/.completions/sls.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
