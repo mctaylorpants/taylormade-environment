@@ -89,6 +89,7 @@ alias gs='git status'
 alias gS='git show'
 alias gl='git log --pretty=oneline'
 alias ga='git add'
+alias gau='git add --update'
 alias gc='git commit -v'
 alias gcm='git commit -m'
 alias gd='git diff'
@@ -99,7 +100,7 @@ alias gpoh='git push origin head'
 alias gco='git checkout'
 alias gf='git fetch'
 alias grbm='echo "Updating master..." && CURRENT_BRANCH=`git branch | grep "*" | cut -d " " -f 2` && gco master && git pull && gco $CURRENT_BRANCH && grb master'
-alias gnb='git checkout master && git pull && git checkout -b '
+alias gnb='git checkout master; git pull && git checkout -b '
 alias grbi='git rebase --interactive --autosquash' # override the default grbi in the git zsh plugin
 alias gcom='git checkout master && git pull'
 
@@ -118,6 +119,9 @@ alias dbundle='BUNDLE_TRAMPOLINE_DISABLE=1 ruby -I /Users/alextaylor/code/bundle
 alias ctags="`brew --prefix`/bin/ctags"
 
 alias clj='lein repl'
+
+alias pds='cd ~/code/unbounce/lp-page-data-service'
+alias bundler='cd ~/code/unbounce/lp-page-bundler'
 
 # Make autocomplete more like Bash
 # http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion

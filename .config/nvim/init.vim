@@ -205,14 +205,6 @@ let g:jsx_ext_required = 0
 
 " neomake
 call neomake#configure#automake('rw', 1000)
-let g:neomake_error_sign = {
-      \ 'text': '>>',
-      \ 'texthl': 'ErrorMsg',
-      \ }
-let g:neomake_warning_sign = {
-      \ 'text': '>>',
-      \ 'texthl': 'NeomakeWarningSign'
-      \ }
 
 command Readme set linebreak wrap
 command Filename !echo % | pbcopy
