@@ -140,3 +140,10 @@ export NVM_DIR="/Users/alextaylor/.nvm"
 `/usr/local/bin/aws_rotate_keys_scheduler.rb`
 source ~/.zsh-kube-completion
 export KUBECONFIG=~/code/unbounce/unbox-project/kubeconfig
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/alextaylor/code/typescript-workshop-20171020/introduction-to-typescript/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/alextaylor/code/typescript-workshop-20171020/introduction-to-typescript/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/alextaylor/code/typescript-workshop-20171020/introduction-to-typescript/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/alextaylor/code/typescript-workshop-20171020/introduction-to-typescript/node_modules/tabtab/.completions/sls.zsh

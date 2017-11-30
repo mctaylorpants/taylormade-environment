@@ -44,6 +44,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'leafgarland/typescript-vim'
 
 " Syntax highlighting (polyglot should do it all)
 Plugin 'sheerun/vim-polyglot'
