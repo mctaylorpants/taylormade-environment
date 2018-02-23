@@ -119,6 +119,7 @@ alias dbundle='BUNDLE_TRAMPOLINE_DISABLE=1 ruby -I /Users/alextaylor/code/bundle
 alias ctags="`brew --prefix`/bin/ctags"
 
 alias clj='lein repl'
+alias hsk='stack ghci'
 
 alias pds='cd ~/code/unbounce/lp-page-data-service'
 alias bundler='cd ~/code/unbounce/lp-page-bundler'
@@ -144,6 +145,10 @@ export NVM_DIR="/Users/alextaylor/.nvm"
 `/usr/local/bin/aws_rotate_keys_scheduler.rb`
 source ~/.zsh-kube-completion
 export KUBECONFIG=~/code/unbounce/unbox-project/kubeconfig
+
+# Unbounce builder
+export BUILDER_DIR=/Users/alextaylor/code/unbounce/lp-builder
+source /usr/local/bin/virtualenvwrapper.sh
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
