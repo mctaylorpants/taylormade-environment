@@ -15,6 +15,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " Colors
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'luochen1990/rainbow'
+let g:rainbow_active = 0
 
 " Tools
 Plugin 'neomake/neomake'
