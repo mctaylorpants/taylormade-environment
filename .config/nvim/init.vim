@@ -22,7 +22,7 @@ let g:rainbow_active = 0
 Plugin 'neomake/neomake'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-rails'
-Plugin 'thoughtbot/vim-rspec'
+Plugin 'janko-m/vim-test'
 Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people.git'
 
@@ -186,11 +186,11 @@ nnoremap t7 7gt
 nnoremap t8 8gt
 nnoremap t9 9gt
 
-" vim-rspec commands
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
-nnoremap <Leader>a :call RunAllSpecs()<CR>
+" vim-test
+let test#strategy = "neovim"
+nnoremap <Leader>t :TestFile<CR>
+nnoremap <Leader>s :TestNearest<CR>
+nnoremap <Leader>l :TestLast<CR>
 
 map <Leader>b :Gblame<CR>
 
