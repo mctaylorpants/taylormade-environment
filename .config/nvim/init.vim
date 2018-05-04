@@ -139,6 +139,9 @@ set guicursor+=a:blinkon0 " Disable gui cursor blinking "
 nnoremap <silent> yo  :set paste<cr>o
 nnoremap <silent> yO  :set paste<cr>O
 
+nnoremap ; :
+vnoremap ; :
+
 " Disables paste mode when leaving insert mode
 autocmd InsertLeave *
     \ if &paste == 1 |
