@@ -142,8 +142,6 @@ export NVM_DIR="/Users/alextaylor/.nvm"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #
-# Check if AWS keys need to be rotated
-`/usr/local/bin/aws_rotate_keys_scheduler.rb`
 source ~/.zsh-kube-completion
 export KUBECONFIG=~/code/unbounce/unbox-project/kubeconfig
 

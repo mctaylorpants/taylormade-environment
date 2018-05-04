@@ -14,7 +14,7 @@ class AwsKeys
   end
 
   def need_rotating?
-    last_modified < three_months_ago # i.e. it's been modified in the last 3 months
+    last_modified < two_months_ago # i.e. it's been modified in the last 2 months
   end
 
   private
@@ -26,8 +26,8 @@ class AwsKeys
     end
   end
 
-  def three_months_ago
-    Time.now - (60*60*24*90)
+  def two_months_ago
+    Time.now - (60*60*24*2)
   end
 
   def calculate_file_modification_time!
@@ -37,7 +37,17 @@ class AwsKeys
   end
 end
 
-if AwsKeys.need_rotating?
-  puts "It's that time of year again! Rotating your AWS keys..."
-  `aws-rotate-keys`
+begin
+  date = Time.now
+
+  if AwsKeys.need_rotating?
+    logfile = File.open("#{ENV['HOME']}/.aws/key_rotater.log", 'w') # start a new log file
+    logfile.puts "#{date} - Rotating keys\n"
+    logfile.puts `aws-rotate-keys`
+  else
+    logfile = File.open("#{ENV['HOME']}/.aws/key_rotater.log", 'a') # append to old log file
+    logfile.puts "#{date} - Keys do not need to be rotated\n"
+  end
+ensure
+  logfile.close
 end
