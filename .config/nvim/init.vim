@@ -2,7 +2,7 @@
 "
 " Great presentation on vim
 " http://slidedeck.io/inside/vim-presentation
-
+autocmd filetype crontab setlocal nobackup nowritebackup
 set nocompatible
 filetype off
 
