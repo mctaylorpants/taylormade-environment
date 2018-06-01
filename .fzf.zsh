@@ -12,3 +12,5 @@ fi
 # ------------
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
+export FZF_CTRL_R_OPTS='--height 40% --reverse'
+

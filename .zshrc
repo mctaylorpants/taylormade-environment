@@ -103,6 +103,7 @@ alias grbm='echo "Updating master..." && CURRENT_BRANCH=`git branch | grep "*" |
 alias gnb='git checkout master; git pull && git checkout -b '
 alias grbi='git rebase --interactive --autosquash' # override the default grbi in the git zsh plugin
 alias gcom='git checkout master && git pull'
+alias notes='cd ~/Documents/Drive\ Sync/notes && vim'
 
 # rails
 alias bb='bundle'

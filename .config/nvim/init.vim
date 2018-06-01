@@ -181,16 +181,9 @@ vnoremap <right> <nop>
 
 " tabs
 nnoremap tn :tabnew<CR>
-nnoremap td  :tabclose<CR>
-nnoremap t1 1gt
-nnoremap t2 2gt
-nnoremap t3 3gt
-nnoremap t4 4gt
-nnoremap t5 5gt
-nnoremap t6 6gt
-nnoremap t7 7gt
-nnoremap t8 8gt
-nnoremap t9 9gt
+nnoremap td :tabclose<CR>
+nnoremap th :tabprev<CR>
+nnoremap tl :tabnext<CR>
 
 " vim-test
 let test#strategy = "neovim"
