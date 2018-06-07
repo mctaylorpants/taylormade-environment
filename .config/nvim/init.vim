@@ -35,6 +35,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-rhubarb'
 
 " Tools - Tab Completion
 Plugin 'ervandew/supertab'
@@ -181,7 +182,7 @@ vnoremap <right> <nop>
 
 " tabs
 nnoremap tn :tabnew<CR>
-nnoremap td :tabclose<CR>
+nnoremap tq :tabclose<CR>
 nnoremap th :tabprev<CR>
 nnoremap tl :tabnext<CR>
 
