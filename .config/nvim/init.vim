@@ -66,6 +66,7 @@ call vundle#end()
 filetype plugin indent on
 
 au BufRead,BufNewFile *.es6 setfiletype javascript
+au FileType markdown setlocal nospell
 
 syntax enable
 
