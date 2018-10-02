@@ -99,6 +99,7 @@ alias gP='git pull'
 alias gpoh='git push origin head'
 alias gco='git checkout'
 alias gf='git fetch'
+alias gfo'git fetch && git checkout'
 alias grbm='echo "Updating master..." && CURRENT_BRANCH=`git branch | grep "*" | cut -d " " -f 2` && gco master; git pull && gco $CURRENT_BRANCH && grb master'
 alias gnb='git checkout master; git pull && git checkout -b '
 alias grbi='git rebase --interactive --autosquash' # override the default grbi in the git zsh plugin
