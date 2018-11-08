@@ -72,7 +72,7 @@ syntax enable
 
 " If colors not properly working, check this for solutions
 " http://stackoverflow.com/questions/7278267/incorrect-colors-with-vim-in-iterm2-using-solarized
-set background=dark
+set background=light
 colorscheme solarized
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"

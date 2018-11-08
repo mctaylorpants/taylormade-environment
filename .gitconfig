@@ -21,3 +21,9 @@
 [branch]
   autosetuprebase = always
 
+[user]
+  name = Alex Taylor
+  email = alex.taylor@clio.com
+
+[github]
+  user = alextaylor000
