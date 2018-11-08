@@ -95,12 +95,12 @@ alias gcm='git commit -m'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gp='git push'
-alias gP='git pull'
-alias gpoh='git push origin head'
+alias gP='git pull origin $(current_branch)'
+alias gpoh='git push origin $(current_branch)'
 alias gco='git checkout'
 alias gf='git fetch'
 alias gfo'git fetch && git checkout'
-alias grbm='echo "Updating master..." && CURRENT_BRANCH=`git branch | grep "*" | cut -d " " -f 2` && gco master; git pull && gco $CURRENT_BRANCH && grb master'
+alias grbm='echo "Updating master..." && gco master; git pull && gco - && grb master'
 alias gnb='git checkout master; git pull && git checkout -b '
 alias grbi='git rebase --interactive --autosquash' # override the default grbi in the git zsh plugin
 alias gcom='git checkout master && git pull'
@@ -136,3 +136,4 @@ bindkey '^A' up-line-or-history   # ctrl+a
 eval "$(nodenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /Users/alextaylor/.clio_profile
