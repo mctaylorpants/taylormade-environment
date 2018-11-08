@@ -104,7 +104,7 @@ alias grbm='echo "Updating master..." && CURRENT_BRANCH=`git branch | grep "*" |
 alias gnb='git checkout master; git pull && git checkout -b '
 alias grbi='git rebase --interactive --autosquash' # override the default grbi in the git zsh plugin
 alias gcom='git checkout master && git pull'
-alias notes='cd ~/Documents/Drive\ Sync/notes && vim'
+alias notes='cd ~/notes && vim'
 
 # rails
 alias bb='bundle'
@@ -124,9 +124,6 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias clj='lein repl'
 alias hsk='stack ghci'
 
-alias pds='cd ~/code/unbounce/lp-page-data-service'
-alias bundler='cd ~/code/unbounce/lp-page-bundler'
-
 # Make autocomplete more like Bash
 # http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
 setopt noautomenu
@@ -136,26 +133,6 @@ setopt nomenucomplete
 bindkey '^S' down-line-or-history # ctrl+s
 bindkey '^A' up-line-or-history   # ctrl+a
 
-export NVM_DIR="/Users/alextaylor/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-#
-source ~/.zsh-kube-completion
-export KUBECONFIG=~/code/unbounce/unbox-project/kubeconfig
-
-# Unbounce builder
-export BUILDER_DIR=/Users/alextaylor/code/unbounce/lp-builder
-source /usr/local/bin/virtualenvwrapper.sh
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/alextaylor/code/typescript-workshop-20171020/introduction-to-typescript/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/alextaylor/code/typescript-workshop-20171020/introduction-to-typescript/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/alextaylor/code/typescript-workshop-20171020/introduction-to-typescript/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/alextaylor/code/typescript-workshop-20171020/introduction-to-typescript/node_modules/tabtab/.completions/sls.zsh
+eval "$(nodenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
