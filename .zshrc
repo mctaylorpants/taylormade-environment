@@ -95,6 +95,7 @@ alias gl='git log --pretty=oneline'
 alias ga='git add'
 alias gau='git add --update'
 alias gc='git commit -v'
+alias gca='git commit --amen --no-edit' # because 'amen' is more fun ;)
 alias gcm='git commit -m'
 alias gd='git diff'
 alias gds='git diff --staged'
@@ -107,7 +108,8 @@ alias gfo'git fetch && git checkout'
 alias grbm='echo "Updating master..." && gco master; git pull && gco - && grb master'
 alias gnb='git checkout master; git pull && git checkout -b '
 alias grbi='git rebase --interactive --autosquash' # override the default grbi in the git zsh plugin
-alias gcom='git checkout master && git pull'
+alias gcom='git checkout master && git pull && git-prune-local'
+alias prune='git-prune-local'
 alias notes='cd ~/notes && vim'
 
 # rails
