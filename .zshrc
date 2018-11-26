@@ -57,6 +57,10 @@ HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# This changes the prompt expansion highlight. This became an issue
+# when I switched to Solarized Light, and the default colour was white
+# which has hard to see. https://github.com/robbyrussell/oh-my-zsh/issues/4042#issuecomment-114145634
+zle_highlight=( default:fg=black )
 
 # User configuration
 
