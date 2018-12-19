@@ -23,12 +23,10 @@ Plugin 'neomake/neomake'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-rails'
 Plugin 'janko-m/vim-test'
-Plugin 'guns/vim-sexp'
-Plugin 'tpope/vim-sexp-mappings-for-regular-people.git'
 
 " Tools - Search
 Plugin 'scrooloose/nerdtree'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " Tools - Git
@@ -120,13 +118,11 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_custom_ignore = 'node_modules\|\.git'
 
-" ack
-if executable('ack-grep')
-  let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-endif
+" https://github.com/ggreer/the_silver_searcher
 if executable("ag")
-  " https://github.com/ggreer/the_silver_searcher
-  let g:ackprg = 'ag --nogroup --nocolor --column'
+  " alias so that I can still use :Ag
+  command! -bang -nargs=* -complete=file Ag call ack#Ack('grep<bang>', <q-args>)
+  let g:ackprg = 'ag --nogroup --nocolor --column --ignore log/'
 endif
 
 " NERDtree
