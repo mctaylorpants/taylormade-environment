@@ -195,9 +195,7 @@ map <Leader>b :Gblame<CR>
 
 tnoremap <Esc> <C-\><C-n> " exit :terminal with Esc
 
-" Allow clipboard access just with y and p. Needs vim 7.4 to work.
-" https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
 set inccommand=split " live preview of substitutions
 
