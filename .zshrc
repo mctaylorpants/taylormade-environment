@@ -89,6 +89,7 @@ alias zshconfig="vim ~/.zshrc"
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
 alias vim='nvim'
+alias gcb='git checkout $(git branch | selecta)'
 alias gs='git status'
 alias gS='git show'
 alias gl='git log --pretty=oneline'
@@ -96,6 +97,7 @@ alias ga='git add'
 alias gau='git add --update'
 alias gc='git commit -v'
 alias gca='git commit --amen --no-edit' # because 'amen' is more fun ;)
+alias gcau='gau && gca'
 alias gcm='git commit -m'
 alias gd='git diff'
 alias gds='git diff --staged'

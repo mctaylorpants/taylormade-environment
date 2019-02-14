@@ -185,13 +185,16 @@ nnoremap tq :tabclose<CR>
 nnoremap th :tabprev<CR>
 nnoremap tl :tabnext<CR>
 
+
 " vim-test
 let test#strategy = "neovim"
 nnoremap <Leader>t :TestFile<CR>
 nnoremap <Leader>s :TestNearest<CR>
 nnoremap <Leader>l :TestLast<CR>
 
-map <Leader>b :Gblame<CR>
+map <Leader>b        :Gblame<CR>
+map <leader>d      orequire 'pry'; binding.pry<ESC>
+map <leader>clg    oconsole.log(`
 
 tnoremap <Esc> <C-\><C-n> " exit :terminal with Esc
 
