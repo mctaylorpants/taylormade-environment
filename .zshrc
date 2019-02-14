@@ -4,12 +4,10 @@ export TAYLORMADE=/Users/alextaylor/code/taylormade-environment
 export ZSH=/Users/alextaylor/.oh-my-zsh
 
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 export PATH="$HOME/Library/Python/2.7/bin:$PATH" # for the aws eb CLI
 export PATH="/usr/local/sbin:$PATH" # recommended by `brew doctor`
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
-export PATH="./bin:$PATH" # export local bin after rbenv inits so we can override the shims (for bin/rspec, bin/rails, etc)
 
 plugins=(git docker)
 
@@ -141,7 +139,15 @@ setopt nomenucomplete
 bindkey '^S' down-line-or-history # ctrl+s
 bindkey '^A' up-line-or-history   # ctrl+a
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# clio_profile
+export PATH="./bin:$PATH" # export local bin after rbenv inits so we can override the shims (for bin/rspec, bin/rails, etc)
+eval "$(rbenv init -)"
+
 eval "$(nodenv init -)"
+export VAGRANT_DEV_MODE=HYBRID
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /Users/alextaylor/.clio_profile
