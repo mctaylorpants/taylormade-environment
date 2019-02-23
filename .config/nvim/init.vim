@@ -80,11 +80,6 @@ set laststatus=2
 set encoding=utf-8
 set number
 set nowrap
-
-" leader character
-let mapleader = "'"
-
-" whitespace
 set smarttab
 set expandtab
 set list listchars=tab:▸\ ,trail:·
@@ -92,11 +87,7 @@ set backspace=indent,eol,start
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-
-" backup
 set directory=~/.vim/backup//
-
-" show in title bar
 set title
 set splitbelow
 set splitright
@@ -105,15 +96,20 @@ set splitright
 set so=20
 
 " custom status bar http://learnvimscriptthehardway.stevelosh.com/chapters/17.html
-:set statusline=%f         " Path to the file
-:set statusline+=%=        " Switch to the right side
-:set statusline+=%l:%c     " Current line and column
-:set statusline+=/         " Separator
-:set statusline+=%L        " Total lines
+set statusline=%f         " Path to the file
+set statusline+=%=        " Switch to the right side
+set statusline+=%l:%c     " Current line and column
+set statusline+=/         " Separator
+set statusline+=%L        " Total lines
 
 set hlsearch
+set visualbell " If 't_vb' is cleared and 'visualbell' is set, no beep and no flash will ever occur
+set t_vb=
+set guicursor+=a:blinkon0 " Disable gui cursor blinking "
+set clipboard+=unnamedplus
+set inccommand=split " live preview of substitutions
 
-" ctrlp
+let mapleader = "'"
 let g:ctrlp_max_files = 0
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_custom_ignore = 'node_modules\|\.git'
@@ -130,61 +126,29 @@ map <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\/packages']
 let NERDTreeShowLineNumbers=1
 
-" If 't_vb' is cleared and 'visualbell' is set, "
-" no beep and no flash will ever occur "
-set visualbell
-set t_vb=
-set guicursor+=a:blinkon0 " Disable gui cursor blinking "
 
-" Inspired by https://github.com/tpope/vim-unimpaired "
-" Sets paste on and set nopaste when leaving insert mode "
-" using an autocommand "
-nnoremap <silent> yo  :set paste<cr>o
-nnoremap <silent> yO  :set paste<cr>O
+nnoremap ;         :
+vnoremap ;         :
 
-nnoremap ; :
-vnoremap ; :
+nnoremap <C-h>     ^
+nnoremap <C-l>     $
+nnoremap <C-j>     }
+nnoremap <C-k>     {
 
-" Disables paste mode when leaving insert mode
-autocmd InsertLeave *
-    \ if &paste == 1 |
-        \     set nopaste |
-            \ endif
-
-" CUSTOM KEY BINDINGS
-
-" remap soft bol and eol
-nnoremap <C-h> ^
-nnoremap <C-l> $
-nnoremap <C-j> }
-nnoremap <C-k> {
-
-" start/end of line
-map H ^
-map L $
+nnoremap tn        :tabnew<CR>
+nnoremap tq        :tabclose<CR>
+nnoremap th        :tabprev<CR>
+nnoremap tl        :tabnext<CR>
 
 " window resizing
-nnoremap <Up> <C-w>-<C-w>-
-nnoremap <Down> <C-w>+<C-w>+
-nnoremap <Left> <C-w><<C-w><
-nnoremap <Right> <C-w>><C-w>>
+nnoremap <Up>     <C-w>-<C-w>-
+nnoremap <Down>   <C-w>+<C-w>+
+nnoremap <Left>   <C-w><<C-w><
+nnoremap <Right>  <C-w>><C-w>>
 
-" force hjkl
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-vnoremap <up> <nop>
-vnoremap <down> <nop>
-vnoremap <left> <nop>
-vnoremap <right> <nop>
-
-" tabs
-nnoremap tn :tabnew<CR>
-nnoremap tq :tabclose<CR>
-nnoremap th :tabprev<CR>
-nnoremap tl :tabnext<CR>
-
+map <Leader>b      :Gblame<CR>
+map <leader>d      orequire 'pry'; binding.pry<ESC>
+map <leader>clg    oconsole.log(`
 
 " vim-test
 let test#strategy = "neovim"
@@ -192,15 +156,14 @@ nnoremap <Leader>t :TestFile<CR>
 nnoremap <Leader>s :TestNearest<CR>
 nnoremap <Leader>l :TestLast<CR>
 
-map <Leader>b        :Gblame<CR>
-map <leader>d      orequire 'pry'; binding.pry<ESC>
-map <leader>clg    oconsole.log(`
+tnoremap <Esc>     <C-\><C-n> " exit :terminal with Esc
 
-tnoremap <Esc> <C-\><C-n> " exit :terminal with Esc
+" Disables paste mode when leaving insert mode
+autocmd InsertLeave *
+    \ if &paste == 1 |
+        \     set nopaste |
+            \ endif
 
-set clipboard+=unnamedplus
-
-set inccommand=split " live preview of substitutions
 
 " jsx highlighting
 let g:jsx_ext_required = 0
