@@ -114,11 +114,7 @@ alias notes='cd ~/notes && vim'
 
 # rails
 alias bb='bundle'
-
-#instance lookup alias
-alias prod='aws-ec2-list --region=us-east-1 | grep webapp'
-alias int='aws-ec2-list --region=us-west-2 | grep webapp'
-alias webapp='cd ~/code/unbounce/lp-webapp'
+alias be='bundle exec'
 
 # for bundler development
 # https://github.com/bundler/bundler/blob/master/doc/development/SETUP.md
