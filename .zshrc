@@ -147,3 +147,12 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /Users/alextaylor/.clio_profile
+
+alias dc='docker-compose'
+alias dcrspec='docker-compose run --rm app rspec'
+
+###
+# clio-specific
+alias dsql='mysql --host=127.0.0.1 --port=6033 --user=themis_dev --password=mysql5566 themis_development_1'
+alias gsql='docker-compose run --rm mysql mysql --host=127.0.0.1 --user=root --password=Yb39GiXsFy6B lexicata_dev'
+###
