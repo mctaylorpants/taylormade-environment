@@ -1,8 +1,4 @@
-# Try to load Rails environment
-rails = File.join(Dir.getwd, 'config', 'environment.rb')
-
-if File.exist?(rails)
-  require rails
-  env = ENV['RAILS_ENV'] || Rails.env
-  puts "Loading Rails environment: #{env}"
-end
+Pry.commands.alias_command 'c', 'continue'
+Pry.commands.alias_command 's', 'step'
+Pry.commands.alias_command 'n', 'next'
+Pry.commands.alias_command 'w', 'whereami?'

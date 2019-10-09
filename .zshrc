@@ -3,7 +3,7 @@ export TAYLORMADE=/Users/alextaylor/code/taylormade-environment
 
 export ZSH=/Users/alextaylor/.oh-my-zsh
 
-export PATH="$HOME/.rbenv/bin:$PATH"
+# export PATH="$HOME/.rbenv/bin:$PATH"
 
 export PATH="$HOME/Library/Python/2.7/bin:$PATH" # for the aws eb CLI
 export PATH="/usr/local/sbin:$PATH" # recommended by `brew doctor`
@@ -87,7 +87,7 @@ alias zshconfig="vim ~/.zshrc"
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
 alias vim='nvim'
-alias gcb='git checkout $(git branch | selecta)'
+alias gcb='git checkout $(git for-each-ref --sort=-committerdate --count=50 --format="%(refname:short)" refs/heads/ | selecta)'
 alias gs='git status'
 alias gS='git show'
 alias gl='git log --pretty=oneline'
@@ -108,13 +108,17 @@ alias gfo'git fetch && git checkout'
 alias grbm='echo "Updating master..." && gco master; git pull && gco - && grb master'
 alias gnb='git checkout master; git pull && git checkout -b '
 alias grbi='git rebase --interactive --autosquash' # override the default grbi in the git zsh plugin
-alias gcom='git checkout master && git pull && git-prune-local'
+alias gcom='git checkout master && git pull'
 alias prune='git-prune-local'
+alias nuke='git reset --hard HEAD~50 && git pull'
 alias notes='cd ~/notes && vim'
 
 # rails
-alias bb='bundle'
+alias bb='bundle install --local'
 alias be='bundle exec'
+alias bn='IGNORE_PENDING_RAILS_NEXT=1 bin/next'
+alias bo='bundle open'
+alias bno='bin/next bundle open'
 
 # for bundler development
 # https://github.com/bundler/bundler/blob/master/doc/development/SETUP.md

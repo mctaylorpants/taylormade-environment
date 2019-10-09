@@ -50,10 +50,10 @@ Plugin 'leafgarland/typescript-vim'
 " Syntax highlighting (polyglot should do it all)
 Plugin 'sheerun/vim-polyglot'
 
-Plugin 'gabrielelana/vim-markdown'
+" Plugin 'gabrielelana/vim-markdown'
 let g:polyglot_disabled = ['markdown', 'md']
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_new_list_item_indent = 0
+" let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_new_list_item_indent = 0
 
 call vundle#end()
 " END VUNDLE
