@@ -162,6 +162,11 @@ alias gsql='docker-compose run --rm mysql mysql --host=127.0.0.1 --user=root --p
 ###
 
 # override avit's prompt because git is super slow in themis on catalina :/
+# Load version control information
+autoload -Uz vcs_info
+zstyle ':vcs_info:git*' formats "[%b]"
+precmd() { vcs_info }
+
 export PROMPT='
-${_current_dir}
-%{$fg[green]%}$>%{$resetcolor%} '
+${_current_dir} ${vcs_info_msg_0_} $> '
+export RPROMPT=''
