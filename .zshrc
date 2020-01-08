@@ -160,3 +160,8 @@ alias dcrspec='docker-compose run --rm app rspec'
 alias dsql='mysql --host=127.0.0.1 --port=6033 --user=themis_dev --password=mysql5566 themis_development_1'
 alias gsql='docker-compose run --rm mysql mysql --host=127.0.0.1 --user=root --password=Yb39GiXsFy6B lexicata_dev'
 ###
+
+# override avit's prompt because git is super slow in themis on catalina :/
+export PROMPT='
+${_current_dir}
+%{$fg[green]%}$>%{$resetcolor%} '
