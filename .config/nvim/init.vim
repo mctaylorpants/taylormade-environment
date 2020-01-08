@@ -31,7 +31,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 
 " Tools - Git
 Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+" Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-rhubarb'
 
