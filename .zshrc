@@ -111,7 +111,7 @@ alias grbi='git rebase --interactive --autosquash' # override the default grbi i
 alias gcom='git checkout master && git pull'
 alias prune='git-prune-local'
 alias nuke='git reset --hard HEAD~50 && git pull'
-alias notes='cd ~/notes && vim'
+alias wip='git commit --no-verify -m "WIP"'
 
 # rails
 alias bb='bundle install --local'
@@ -155,11 +155,8 @@ source /Users/alextaylor/.clio_profile
 alias dc='docker-compose'
 alias dcrspec='docker-compose run --rm app rspec'
 
-###
-# clio-specific
-alias dsql='mysql --host=127.0.0.1 --port=6033 --user=themis_dev --password=mysql5566 themis_development_1'
-alias gsql='docker-compose run --rm mysql mysql --host=127.0.0.1 --user=root --password=Yb39GiXsFy6B lexicata_dev'
-###
+alias bnr='bin/next rspec'
+alias br='bin/rspec'
 
 # override avit's prompt because git is super slow in themis on catalina :/
 # Load version control information
