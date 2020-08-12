@@ -108,7 +108,7 @@ alias gfo'git fetch && git checkout'
 alias grbm='echo "Updating master..." && gco master; git pull && gco - && grb master'
 alias gnb='git checkout master; git pull && git checkout -b '
 alias grbi='git rebase --interactive --autosquash' # override the default grbi in the git zsh plugin
-alias gcom='git checkout master && git pull'
+alias gcom='git checkout master && gP'
 alias prune='git-prune-local'
 alias nuke='git reset --hard HEAD~50 && git pull'
 alias wip='git commit --no-verify -m "WIP"'
