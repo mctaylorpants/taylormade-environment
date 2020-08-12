@@ -112,9 +112,8 @@ set inccommand=split " live preview of substitutions
 let mapleader = "'"
 let g:ctrlp_max_files = 0
 let g:ctrlp_use_caching = 0
-let g:ctrlp_custom_ignore = 'node_modules\|\.git\|vendor'
 " relies on fd; `brew install fd`
-let g:ctrlp_user_command = 'fd --type f --color=never "" %s'
+let g:ctrlp_user_command = 'fd --exclude "vendor/" --type f --color=never "" %s'
 
 " https://github.com/ggreer/the_silver_searcher
 if executable("ag")
