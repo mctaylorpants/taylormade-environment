@@ -3,6 +3,7 @@ hub
 jq
 neovim
 rbenv
+ripgrep
 selecta
 the_silver_searcher
 tmux
