@@ -75,6 +75,11 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 let g:solarized_termcolors=16
 
+let g:SuperTabContextTextFileTypeExclusions = [".log"]
+
+" in combination with Mouse Reporting enabled in iTerm, allows
+" the mouse to be used in normal and visual mode
+set mouse=nv
 set laststatus=2
 set encoding=utf-8
 set number
@@ -152,7 +157,7 @@ nnoremap <Leader>t :TestFile<CR>
 nnoremap <Leader>s :TestNearest<CR>
 nnoremap <Leader>l :TestLast<CR>
 
-tnoremap <Esc>     <C-\><C-n> " exit :terminal with Esc
+tnoremap <Leader><Esc>     <C-\><C-n> " exit :terminal
 
 " Disables paste mode when leaving insert mode
 autocmd InsertLeave *
@@ -161,8 +166,8 @@ autocmd InsertLeave *
             \ endif
 
 " fzf
-map <C-p><C-p> :Files<CR>
-map <C-p><C-b> :History<CR>
+map <C-p>   :GFiles<CR>
+map <C-b>   :History<CR>
 let g:fzf_buffers_jump = 1
 
 " jsx highlighting
