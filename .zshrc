@@ -109,6 +109,7 @@ alias grbm='echo "Updating master..." && gco master; git pull && gco - && grb ma
 alias gmm='echo "Updating master..." && gco master && git pull && gco - && git merge master'
 alias gnb='git checkout master && git pull && git checkout -b '
 alias grbi='git rebase --interactive --autosquash' # override the default grbi in the git zsh plugin
+alias grh='git reset --hard'
 alias gcom='git checkout master && gP'
 alias prune='git-prune-local'
 alias nuke='git reset --hard HEAD~50 && git pull'
@@ -140,8 +141,6 @@ setopt nomenucomplete
 bindkey '^S' down-line-or-history # ctrl+s
 bindkey '^A' up-line-or-history   # ctrl+a
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # clio_profile
 export PATH="./bin:$PATH" # export local bin after rbenv inits so we can override the shims (for bin/rspec, bin/rails, etc)
 eval "$(rbenv init -)"
@@ -168,3 +167,5 @@ precmd() { vcs_info }
 export PROMPT='
 ${_current_dir} ${vcs_info_msg_0_} $> '
 export RPROMPT=''
+
+eval "$(dev _hook)"

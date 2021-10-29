@@ -33,3 +33,5 @@
 [alias]
 	bisect-fails = bisect bad
 	bisect-passes = bisect good
+[init]
+	defaultBranch = main
