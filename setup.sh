@@ -9,12 +9,14 @@ sudo apt-get -y update && sudo apt-get -y install neovim
 
 echo "Installing and configuring Vundle..."
 git clone "https://github.com/VundleVim/Vundle.vim.git" "$HOME/.vim/bundle/Vundle.vim"
-# nvim +PluginInstall +qall
 
 echo "Symlinking dotfiles..."
 mkdir -p "$HOME/.config/nvim"
 ln -fs "$(pwd)/.config/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 ln -fs "$(pwd)/.zshrc" "$HOME/.zshrc"
+
+echo "Installing neovim plugins..."
+nvim +PluginInstall +qall
 
 # Don't copy .gitconfig for now.
 # The following config prevents Vundle's plugin setup from
