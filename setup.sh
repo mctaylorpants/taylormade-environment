@@ -1,4 +1,8 @@
 set -e
+set -x
+
+echo "🛠 dotfiles install. Running as '$(whoami)'"
+echo "\$HOME = $HOME"
 
 echo "Installing neovim..."
 sudo apt-get -y update && sudo apt-get -y install neovim
