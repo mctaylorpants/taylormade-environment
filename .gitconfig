@@ -35,3 +35,5 @@
 	bisect-passes = bisect good
 [init]
 	defaultBranch = main
+[pull]
+	rebase = true
