@@ -122,15 +122,8 @@ alias bn='IGNORE_PENDING_RAILS_NEXT=1 bin/next'
 alias bo='bundle open'
 alias bno='bin/next bundle open'
 
-# for bundler development
-# https://github.com/bundler/bundler/blob/master/doc/development/SETUP.md
-alias dbundle='BUNDLE_TRAMPOLINE_DISABLE=1 ruby -I /Users/alextaylor/code/bundler/bundler/lib /Users/alextaylor/code/bundler/bundler/exe/bundle'
+alias notes='vim ~/Documents/obsidian-notes/notes'
 
-# make sure to use homebrew's ctags (https://gist.github.com/nazgob/1570678)
-alias ctags="`brew --prefix`/bin/ctags"
-
-alias clj='lein repl'
-alias hsk='stack ghci'
 
 # Make autocomplete more like Bash
 # http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
