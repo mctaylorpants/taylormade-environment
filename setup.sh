@@ -1,14 +1,15 @@
-rm ~/Library/Preferences/com.googlecode.iterm2.plist 2> /dev/null
-rm ~/.zshrc 2> /dev/null
-rm ~/.vimrc 2> /dev/null
-rm ~/.gitconfig 2> /dev/null
-rm ~/.gitignore_global 2> /dev/null
+echo "Installing neovim..."
+sudo apt install neovim
 
-ln -s ~/code/taylormade-environment/Library/Preferences/com.googlecode.iterm2.plist ~/Library/Preferences/
-ln -s ~/code/taylormade-environment/.vimrc ~/
-ln -s ~/code/taylormade-environment/.zshrc ~/
-ln -s ~/code/taylormade-environment/.gitconfig ~/
-ln -s ~/code/taylormade-environment/.gitignore_global ~/
-ln -s ~/.vim ~/.config/nvim
-ln -s ~/code/taylormade-environment/vimrc ~/.config/nvim/init.vim
+echo "Installing and configuring Vundle..."
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+nvim +PluginInstall +qall
+
+echo "Symlinking dotfiles..."
+ln -s .config/nvim/init.vim ~/.config/nvim/init.vm
+ln -s .zshrc ~/.zshrc
+ln -s .gitconfig ~/.gitconfig
+
+echo "Done! 🎉"
+
 

@@ -1,9 +1,4 @@
-# Path to settings repo
-export TAYLORMADE=/Users/alextaylor/code/taylormade-environment
-
-export ZSH=/Users/alextaylor/.oh-my-zsh
-
-# export PATH="$HOME/.rbenv/bin:$PATH"
+export ZSH=$HOME/.oh-my-zsh
 
 export PATH="$HOME/Library/Python/2.7/bin:$PATH" # for the aws eb CLI
 export PATH="/usr/local/sbin:$PATH" # recommended by `brew doctor`
@@ -33,7 +28,6 @@ plugins=(git docker)
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
-# Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
@@ -143,7 +137,7 @@ export VAGRANT_DEV_MODE=HYBRID
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /Users/alextaylor/.clio_profile
+source $HOME/.clio_profile
 
 alias dc='docker-compose'
 alias dcrspec='docker-compose run --rm app rspec'
