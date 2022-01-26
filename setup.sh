@@ -1,7 +1,7 @@
 set -e
 
 echo "Installing neovim..."
-sudo apt update && sudo apt install neovim
+sudo apt-get -y update && sudo apt-get -y install neovim
 
 echo "Installing and configuring Vundle..."
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
