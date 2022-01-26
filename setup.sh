@@ -15,7 +15,14 @@ echo "Symlinking dotfiles..."
 mkdir -p "$HOME/.config/nvim"
 ln -fs "$(pwd)/.config/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 ln -fs "$(pwd)/.zshrc" "$HOME/.zshrc"
-ln -fs "$(pwd)/.gitconfig" "$HOME/.gitconfig"
+
+# Don't copy .gitconfig for now.
+# The following config prevents Vundle's plugin setup from
+# cloning public repos:
+# [url "git@github.com:"]
+#   insteadOf = https://github.com/
+#
+# ln -fs "$(pwd)/.gitconfig" "$HOME/.gitconfig"
 
 echo "Done! 🎉"
 
