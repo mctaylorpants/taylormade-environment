@@ -49,20 +49,39 @@ Plugin 'leafgarland/typescript-vim'
 " Syntax highlighting (polyglot should do it all)
 Plugin 'sheerun/vim-polyglot'
 
-" Plugin 'gabrielelana/vim-markdown'
+
 let g:polyglot_disabled = ['markdown', 'md']
-" let g:vim_markdown_folding_disabled = 1
-" let g:vim_markdown_new_list_item_indent = 0
 
 call vundle#end()
 " END VUNDLE
 "
 
+
+call plug#begin()
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neoclide/coc-eslint'
+Plug 'neoclide/coc-tslint-plugin'
+Plug 'neoclide/coc-prettier'
+call plug#end()
+
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-prettier',
+  \ 'coc-eslint',
+  \ 'coc-tslint-plugin'
+  \ ]
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
 " Presentation
 
 filetype plugin indent on
 
-au BufRead,BufNewFile *.es6 setfiletype javascript
 au FileType markdown setlocal nospell
 
 syntax enable
