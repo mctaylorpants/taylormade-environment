@@ -20,8 +20,10 @@ ln -fs "$(pwd)/.config/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 ln -fs "$(pwd)/.zshrc" "$HOME/.zshrc"
 
 echo "Installing neovim plugins..."
-nvim +PluginInstall +qall
-nvim +PlugInstall +qall
+# Use /dev/null as a config file so we can install plugins
+# without other config getting in the way
+nvim -u /dev/null --headless +PluginInstall +qall
+nvim -u /dev/null --headless +PlugInstall +qall
 
 # Don't copy .gitconfig for now.
 # The following config prevents Vundle's plugin setup from
