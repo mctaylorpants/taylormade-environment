@@ -83,7 +83,12 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:git*' formats "[%b]"
 precmd() { vcs_info }
 
-export PROMPT='
-${_current_dir} ${vcs_info_msg_0_} $> '
-export RPROMPT=''
-
+if [[ "${CODESPACES}" = true ]]; then
+  export PROMPT='
+${_current_dir}${vcs_info_msg_0_} %{$fg[blue]%}$> %{$reset_color%}'
+  export RPROMPT=''
+else
+  export PROMPT='
+${_current_dir}${vcs_info_msg_0_} %{$fg[red]%}$> %{$reset_color%}'
+  export RPROMPT=''
+fi
