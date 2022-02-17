@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
 if [[ "${CODESPACES:-}" == 'true' ]]; then
-  sudo apt-get -y update
-  sudo apt-get -y install neovim
+  echo "=== Installing neovim ==="
+  curl -fLo  "${HOME}/tmp/nvim/nvim.appimage" --create-dirs https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+  chmod u+x "${HOME}/tmp/nvim/nvim.appimage"
+  ${HOME}/tmp/nvim/nvim.appimage --appimage-extract
+  sudo mv squashfs-root /
+  sudo ln -sf /squashfs-root/AppRun /usr/bin/nvim
 
   echo "=== Installing Vundle ==="
   git clone "https://github.com/VundleVim/Vundle.vim.git" "$HOME/.vim/bundle/Vundle.vim"
