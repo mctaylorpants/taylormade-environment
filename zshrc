@@ -85,7 +85,7 @@ precmd() { vcs_info }
 
 if [[ "${CODESPACES}" = true ]]; then
   export PROMPT='
-${_current_dir}${vcs_info_msg_0_} %{$fg[blue]%}$> %{$reset_color%}'
+${_current_dir}${vcs_info_msg_0_} 🐙 %{$fg[blue]%}$> %{$reset_color%}'
   export RPROMPT=''
 else
   export PROMPT='
