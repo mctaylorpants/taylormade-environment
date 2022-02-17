@@ -1,5 +1,6 @@
-# clio_profile
-export PATH="./bin:$PATH" # export local bin after rbenv inits so we can override the shims (for bin/rspec, bin/rails, etc)
-eval "$(rbenv init -)"
-eval "$(nodenv init -)"
+eval "$(~/go/bin/dev _hook)"
+
+# export local bin after rbenv inits so we can override the shims (for bin/rspec, bin/rails, etc)
+export PATH="./bin:$PATH" 
+
 source $HOME/.clio_profile

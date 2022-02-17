@@ -87,4 +87,3 @@ export PROMPT='
 ${_current_dir} ${vcs_info_msg_0_} $> '
 export RPROMPT=''
 
-eval "$(dev _hook)"
