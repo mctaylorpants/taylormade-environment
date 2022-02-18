@@ -1,6 +1,8 @@
 - link:
     ~/.zshrc:
       force: true
+    ~/.gitconfig:
+      force: true
     ~/.config/nvim/init.vim:
       path: vimrc
       force: true
