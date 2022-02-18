@@ -1,1 +1,4 @@
-This folder represents ~/ on my machine. I started it as a way to keep a backup of config files for the various tools that I use.
+# taylormade dotfiles 🛠
+
+I use [dotbot](https://github.com/anishathalye/dotbot) to manage dotfiles. Run `./install` to set up a new environment.
+
