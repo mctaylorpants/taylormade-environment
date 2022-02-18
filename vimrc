@@ -1,5 +1,3 @@
-" NOTES
-"
 autocmd filetype crontab setlocal nobackup nowritebackup
 set nocompatible
 filetype off
@@ -62,7 +60,10 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'neoclide/coc-eslint'
 Plug 'neoclide/coc-tslint-plugin'
 Plug 'neoclide/coc-prettier'
+Plug 'ojroques/vim-oscyank'
 call plug#end()
+
+autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif
 
 let g:coc_global_extensions = [
   \ 'coc-tsserver',

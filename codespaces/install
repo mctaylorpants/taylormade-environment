@@ -8,6 +8,10 @@ if [[ "${CODESPACES:-}" == 'true' ]]; then
   sudo mv squashfs-root /
   sudo ln -sf /squashfs-root/AppRun /usr/bin/nvim
 
+  echo "=== Installing utilities ==="
+  sudo apt-get install -y fzf silversearcher-ag
+  sudo wget https://raw.githubusercontent.com/garybernhardt/selecta/master/selecta -O /usr/local/bin/selecta
+
   echo "=== Installing Vundle ==="
   git clone "https://github.com/VundleVim/Vundle.vim.git" "$HOME/.vim/bundle/Vundle.vim"
 
