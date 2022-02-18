@@ -9,6 +9,7 @@ if [[ "${CODESPACES:-}" == 'true' ]]; then
   sudo ln -sf /squashfs-root/AppRun /usr/bin/nvim
 
   echo "=== Installing utilities ==="
+  sudo apt-get update
   sudo apt-get install -y fzf silversearcher-ag
   sudo wget https://raw.githubusercontent.com/garybernhardt/selecta/master/selecta -O /usr/local/bin/selecta
 
