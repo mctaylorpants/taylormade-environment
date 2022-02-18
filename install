@@ -2,7 +2,7 @@
 
 set -e
 
-source "./codespaces_install"
+source "./codespaces/install"
 
 # Boilerplate dotbot script below
 CONFIG="install.conf.yaml"
