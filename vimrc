@@ -120,7 +120,13 @@ set splitright
 set so=20
 
 " custom status bar http://learnvimscriptthehardway.stevelosh.com/chapters/17.html
-set statusline=%f         " Path to the file
+if !empty($CODESPACES)
+  set statusline=🐙\ %f
+  hi StatusLine ctermfg=magenta ctermbg=white
+else
+  set statusline=%f
+endif
+
 set statusline+=%=        " Switch to the right side
 set statusline+=%l:%c     " Current line and column
 set statusline+=/         " Separator
