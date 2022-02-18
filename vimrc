@@ -2,60 +2,47 @@ autocmd filetype crontab setlocal nobackup nowritebackup
 set nocompatible
 filetype off
 
-" Vundle begin
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
+let g:polyglot_disabled = ['markdown', 'md']
+call plug#begin()
 " Colors
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'luochen1990/rainbow'
+Plug 'altercation/vim-colors-solarized'
+Plug 'luochen1990/rainbow'
 let g:rainbow_active = 0
 
 " Tools
-Plugin 'neomake/neomake'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-rails'
-Plugin 'janko-m/vim-test'
+Plug 'neomake/neomake'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rails'
+Plug 'janko-m/vim-test'
 
 " Tools - Search
-Plugin 'scrooloose/nerdtree'
-Plugin 'mileszs/ack.vim'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 " Tools - Git
-Plugin 'tpope/vim-fugitive'
-" Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-rhubarb'
+Plug 'tpope/vim-fugitive'
+" Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-rhubarb'
 
 " Tools - Tab Completion
-Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab'
 
 " Tools - Formatting
-Plugin 'Raimondi/delimitMate'
-Plugin 'sickill/vim-pasta'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'leafgarland/typescript-vim'
+Plug 'Raimondi/delimitMate'
+Plug 'sickill/vim-pasta'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'leafgarland/typescript-vim'
 
 " Syntax highlighting (polyglot should do it all)
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 
-
-let g:polyglot_disabled = ['markdown', 'md']
-
-call vundle#end()
-" END VUNDLE
-"
-
-
-call plug#begin()
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'neoclide/coc-eslint'
 Plug 'neoclide/coc-tslint-plugin'
