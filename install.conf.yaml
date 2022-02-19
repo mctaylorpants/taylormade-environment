@@ -25,11 +25,6 @@
 - shell:
     - sudo chsh -s $(which zsh) $(whoami)
     -
-      command: nvim --headless +PluginInstall +qall
-      description: "Installing Vundle plugins"
-      stdout: true
-      quiet: false
-    -
       command: nvim --headless +PlugInstall +qall
       description: "Installing vim-plug plugins"
       stdout: true
