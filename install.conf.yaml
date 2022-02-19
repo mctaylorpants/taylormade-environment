@@ -17,6 +17,8 @@
       force: true
     ~/.pryrc:
       force: true
+    ~/.tmux.conf:
+      force: true
     ~/.zshrc:
       force: true
 
