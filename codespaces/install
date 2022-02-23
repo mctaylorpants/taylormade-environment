@@ -15,6 +15,10 @@ if [[ "${CODESPACES:-}" == 'true' ]]; then
     silversearcher-ag \
     tmux
 
+  echo "=== Installing bat ==="
+  curl -fLo "${HOME}/tmp/bat/bat-musl_0.19.0_amd64.deb" --create-dirs https://github.com/sharkdp/bat/releases/download/v0.19.0/bat-musl_0.19.0_amd64.deb
+  sudo dpkg -i "${HOME}/tmp/bat/bat-musl_0.19.0_amd64.deb"
+
   sudo wget https://raw.githubusercontent.com/garybernhardt/selecta/master/selecta -O /usr/local/bin/selecta
 
   echo "=== Installing and configuring vim-plug ==="

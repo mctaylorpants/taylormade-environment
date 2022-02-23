@@ -19,7 +19,7 @@ Plug 'janko-m/vim-test'
 " Tools - Search
 Plug 'scrooloose/nerdtree'
 Plug 'mileszs/ack.vim'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Tools - Git

@@ -83,6 +83,7 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:git*' formats "[%b]"
 precmd() { vcs_info }
 
+export BAT_THEME="Solarized (light)"
 export PROMPT='
 ${_current_dir}${vcs_info_msg_0_} %{$fg[red]%}$> %{$reset_color%}'
 export RPROMPT=''
