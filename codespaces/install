@@ -2,6 +2,7 @@
 
 if [[ "${CODESPACES:-}" == 'true' ]]; then
   echo "=== Installing neovim ==="
+  sudo rm -rf /squashfs-root
   curl -sSfLo  "${HOME}/tmp/nvim/nvim.appimage" --create-dirs https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
   chmod u+x "${HOME}/tmp/nvim/nvim.appimage"
   ${HOME}/tmp/nvim/nvim.appimage --appimage-extract 1>/dev/null
