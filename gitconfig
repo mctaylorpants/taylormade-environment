@@ -5,6 +5,8 @@
   autosetuprebase = always
 [user]
   useConfigOnly = true
+  email = alex@alextaylor.ca
+  name = Alex Taylor
 [alias]
   bisect-fails = bisect bad
   bisect-passes = bisect good
