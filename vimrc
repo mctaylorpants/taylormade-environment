@@ -160,7 +160,7 @@ nnoremap <Down>   <C-w>+<C-w>+
 nnoremap <Left>   <C-w><<C-w><
 nnoremap <Right>  <C-w>><C-w>>
 
-map <Leader>b      :Gblame<CR>
+map <Leader>b      :Git blame<CR>
 map <leader>d      orequire 'pry'; binding.pry<ESC>
 map <leader>clg    oconsole.log(`
 
@@ -191,3 +191,4 @@ call neomake#configure#automake('rw', 1000)
 
 command Readme set linebreak wrap
 command Filename !echo % | pbcopy
+command! Gblame Git blame
