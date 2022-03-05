@@ -94,5 +94,3 @@ if [[ "${CODESPACES}" = true ]]; then
 ${_current_dir}${vcs_info_msg_0_} 🐙 %{$fg[blue]%}$> %{$reset_color%}'
   export RPROMPT=''
 fi
-
-[[ $TERM != "screen" ]] && exec tmux
