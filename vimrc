@@ -43,11 +43,16 @@ Plug 'leafgarland/typescript-vim'
 " Syntax highlighting (polyglot should do it all)
 Plug 'sheerun/vim-polyglot'
 
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'neoclide/coc-eslint'
-Plug 'neoclide/coc-tslint-plugin'
-Plug 'neoclide/coc-prettier'
+" coc.vim only works in Node 12+
+if system("node --version") =~ '^v[1-9][2-9]'
+  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  Plug 'neoclide/coc-eslint'
+  Plug 'neoclide/coc-tslint-plugin'
+  Plug 'neoclide/coc-prettier'
+endif
+
 Plug 'ojroques/vim-oscyank'
+
 call plug#end()
 
 autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif
