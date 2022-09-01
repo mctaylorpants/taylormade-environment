@@ -1,0 +1,8 @@
+#!/bin/sh
+
+files=$(git diff --staged --name-only --diff-filter=ACMR HEAD)
+if [ -n "$files" ]
+then
+  echo "🤖 linting changed files..."
+  bundle exec rubocop --auto-correct "$files"
+fi
