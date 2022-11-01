@@ -41,13 +41,13 @@ alias gco='git checkout'
 alias gf='git fetch'
 alias gfo'git fetch && git checkout'
 alias grbm='echo "Updating master..." && gco master; git pull && gco - && grb master'
+alias ghrbm='git reset --hard HEAD~100 && grbm'
 alias gmm='echo "Updating master..." && gco master && git pull && gco - && git merge master'
 alias gnb='git checkout master && git pull && git checkout -b '
 alias grbi='git rebase --interactive --autosquash' # override the default grbi in the git zsh plugin
 alias grh='git reset --hard'
 alias gcom='git checkout master && gP'
 alias prune='git-prune-local'
-alias nuke='git reset --hard HEAD~50 && git pull'
 alias wip='git commit --no-verify -m "WIP"'
 
 # rails

@@ -2,12 +2,17 @@ autocmd filetype crontab setlocal nobackup nowritebackup
 set nocompatible
 filetype off
 
-
 let g:polyglot_disabled = ['markdown', 'md']
 call plug#begin()
 " Colors
+" Plug 'mctaylorpants/vim-borahae'
 Plug 'altercation/vim-colors-solarized'
 Plug 'luochen1990/rainbow'
+
+Plug 'olimorris/onedarkpro.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 let g:rainbow_active = 0
 
 " Tools
@@ -39,6 +44,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'leafgarland/typescript-vim'
+Plug 'mattn/emmet-vim'
 
 " Syntax highlighting (polyglot should do it all)
 Plug 'sheerun/vim-polyglot'
@@ -79,13 +85,45 @@ au FileType markdown setlocal nospell
 
 syntax enable
 
-" If colors not properly working, check this for solutions
-" http://stackoverflow.com/questions/7278267/incorrect-colors-with-vim-in-iterm2-using-solarized
 set background=light
-colorscheme solarized
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-let g:solarized_termcolors=16
+" colorscheme solarized
+" let g:solarized_contrast="high"
+" let g:solarized_visibility="high"
+" let g:solarized_termcolors=16
+
+colorscheme onedarkpro
+
+lua <<EOF
+  require('nvim-treesitter.configs').setup {
+    ensure_installed = {
+      "ruby",
+      "javascript",
+      "typescript",
+    }
+  }
+
+  require("onedarkpro").setup {
+    theme = "onelight",
+    options = {
+      terminal_colors = true,
+    },
+  }
+
+  require('lualine').setup {
+    options = {
+      theme = "onelight",
+      ignore_focus = { 'nerdtree' },
+    },
+    sections = {
+      lualine_a = {'mode'},
+      lualine_b = {'diff'},
+      lualine_c = {'filename'},
+      lualine_x = {},
+      lualine_y = {'"🍵"', 'searchcount'},
+      lualine_z = {'location'}
+    },
+  }
+EOF
 
 let g:SuperTabContextTextFileTypeExclusions = [".log"]
 
@@ -108,21 +146,9 @@ set title
 set splitbelow
 set splitright
 
+
 " always keep 20 lines of margin between the cursor and the top/bottom edges
 set so=20
-
-" custom status bar http://learnvimscriptthehardway.stevelosh.com/chapters/17.html
-if !empty($CODESPACES)
-  set statusline=🐙\ %f
-  hi StatusLine ctermfg=magenta ctermbg=white
-else
-  set statusline=%f
-endif
-
-set statusline+=%=        " Switch to the right side
-set statusline+=%l:%c     " Current line and column
-set statusline+=/         " Separator
-set statusline+=%L        " Total lines
 
 set hlsearch
 set visualbell " If 't_vb' is cleared and 'visualbell' is set, no beep and no flash will ever occur
@@ -144,7 +170,6 @@ endif
 map <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\/packages']
 let NERDTreeShowLineNumbers=1
-
 
 nnoremap ;         :
 vnoremap ;         :
