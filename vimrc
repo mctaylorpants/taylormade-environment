@@ -191,6 +191,7 @@ nnoremap <Left>   <C-w><<C-w><
 nnoremap <Right>  <C-w>><C-w>>
 
 map <Leader>b      :Git blame<CR>
+map <Leader>v      :b#<CR>
 map <leader>d      orequire 'pry'; binding.pry<ESC>
 map <leader>clg    oconsole.log(`
 
@@ -222,3 +223,7 @@ call neomake#configure#automake('rw', 1000)
 command Readme set linebreak wrap
 command Filename !echo % | pbcopy
 command! Gblame Git blame
+
+let g:user_emmet_leader_key=','
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,eruby EmmetInstall
