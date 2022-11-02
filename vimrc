@@ -93,6 +93,7 @@ lua <<EOF
   }
 
   require("onedarkpro").setup {
+    caching = true,
     theme = "onelight",
     highlights = {
       MatchParen = { bg = "${gray}" },
