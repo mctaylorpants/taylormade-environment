@@ -5,15 +5,11 @@ filetype off
 let g:polyglot_disabled = ['markdown', 'md']
 call plug#begin()
 " Colors
-" Plug 'mctaylorpants/vim-borahae'
-Plug 'altercation/vim-colors-solarized'
-Plug 'luochen1990/rainbow'
 
 Plug 'olimorris/onedarkpro.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-let g:rainbow_active = 0
 
 " Tools
 Plug 'neomake/neomake'
@@ -85,12 +81,6 @@ au FileType markdown setlocal nospell
 
 syntax enable
 
-set background=light
-" colorscheme solarized
-" let g:solarized_contrast="high"
-" let g:solarized_visibility="high"
-" let g:solarized_termcolors=16
-
 colorscheme onedarkpro
 
 lua <<EOF
@@ -104,14 +94,25 @@ lua <<EOF
 
   require("onedarkpro").setup {
     theme = "onelight",
+    highlights = {
+      MatchParen = { bg = "${gray}" },
+      TabLine = { style = "underline", fg = "${purple}" },
+      TabLineFill = { style = "underline", fg = "${purple}" }
+    },
     options = {
       terminal_colors = true,
+      cursorline = true
     },
   }
 
+  -- make the inactive status bar a bit darker so it's
+  -- easier to differentiate horizontal splits
+  local custom_onelight = require('lualine.themes.onelight')
+  custom_onelight.inactive = { c = { bg = "#d0d0d0" } }
+
   require('lualine').setup {
     options = {
-      theme = "onelight",
+      theme = custom_onelight,
       ignore_focus = { 'nerdtree' },
     },
     sections = {
