@@ -6,12 +6,10 @@ if [ -n "$files" ]
 then
   echo "🤖 linting changed files..."
 
-  if [ -f .git/MERGE_MSG ]
+  # Don't lint on merges, since there are likely to be
+  # lots of changed files.
+  if ! [ -f .git/MERGE_MSG ]
   then
-    # Don't lint on merges, since there are likely to be
-    # lots of changed files.
-    bundle exec rubocop $files
-  else
-    bundle exec rubocop --auto-correct $files
+    bundle exec rubocop --auto-correct --force-exclusion $files
   fi
 fi
