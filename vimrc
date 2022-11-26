@@ -81,8 +81,6 @@ au FileType markdown setlocal nospell
 
 syntax enable
 
-colorscheme onedarkpro
-
 lua <<EOF
   require('nvim-treesitter.configs').setup {
     ensure_installed = {
@@ -92,6 +90,8 @@ lua <<EOF
     }
   }
 
+  -- vim.o.background = "light" -- enabling this breaks the custom highlights below
+  vim.cmd("colorscheme onedarkpro")
   require("onedarkpro").setup {
     caching = true,
     theme = "onelight",
@@ -119,7 +119,7 @@ lua <<EOF
     sections = {
       lualine_a = {'mode'},
       lualine_b = {'diff'},
-      lualine_c = {'filename'},
+      lualine_c = { { 'filename', path = 3 } },
       lualine_x = {},
       lualine_y = {'"🍵"', 'searchcount'},
       lualine_z = {'location'}
@@ -211,8 +211,14 @@ autocmd InsertLeave *
         \     set nopaste |
             \ endif
 
+
 " fzf
-map <C-p>   :GFiles<CR>
+if isdirectory(".git")
+  map <C-p>   :GFiles<CR>
+else
+  map <C-p>   :Files<CR>
+endif
+
 map <C-b>   :History<CR>
 let g:fzf_buffers_jump = 1
 
