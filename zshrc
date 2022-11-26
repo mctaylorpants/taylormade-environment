@@ -88,9 +88,4 @@ export PROMPT='
 ${_current_dir}${vcs_info_msg_0_} %{$fg[red]%}$> %{$reset_color%}'
 export RPROMPT=''
 
-if [[ "${CODESPACES}" = true ]]; then
-  export SHELL=$(which zsh) # SHELL is /bin/bash by default in Codespaces
-  export PROMPT='
-${_current_dir}${vcs_info_msg_0_} 🐙 %{$fg[blue]%}$> %{$reset_color%}'
-  export RPROMPT=''
-fi
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
