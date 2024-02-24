@@ -16,6 +16,8 @@ Plug 'neomake/neomake'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'janko-m/vim-test'
+Plug 'github/copilot.vim'
+command Copilot enable
 
 " Tools - Search
 Plug 'scrooloose/nerdtree'
@@ -25,7 +27,6 @@ Plug 'junegunn/fzf.vim'
 
 " Tools - Git
 Plug 'tpope/vim-fugitive'
-" Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-rhubarb'
 
@@ -170,8 +171,12 @@ endif
 
 " NERDtree
 map <leader>n :NERDTreeToggle<CR>
+map <leader>f :NERDTreeFind<CR>
 let NERDTreeIgnore = ['\/packages']
 let NERDTreeShowLineNumbers=1
+
+" Copilot
+map <leader>c :Copilot panel<CR>
 
 nnoremap ;         :
 vnoremap ;         :
@@ -194,7 +199,7 @@ nnoremap <Right>  <C-w>><C-w>>
 
 map <Leader>b      :Git blame<CR>
 map <Leader>v      :b#<CR>
-map <leader>d      orequire 'pry'; binding.pry<ESC>
+map <leader>d      obinding.pry<ESC>
 map <leader>clg    oconsole.log(`
 
 " vim-test

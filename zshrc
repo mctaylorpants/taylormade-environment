@@ -2,7 +2,6 @@ export ZSH=$HOME/.oh-my-zsh
 
 export PATH="$HOME/Library/Python/2.7/bin:$PATH" # for the aws eb CLI
 export PATH="/usr/local/sbin:$PATH" # recommended by `brew doctor`
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
 plugins=(git docker)
 
@@ -27,6 +26,7 @@ alias gs='git status'
 alias gS='git show'
 alias gl='git log --pretty=oneline'
 alias ga='git add'
+alias gap='git add -p'
 alias gau='git add --update'
 alias gc='git commit -v'
 alias gca='git commit --amen --no-edit' # because 'amen' is more fun ;)
@@ -56,6 +56,7 @@ alias be='bundle exec'
 alias bn='IGNORE_PENDING_RAILS_NEXT=1 bin/next'
 alias bo='bundle open'
 alias bno='bin/next bundle open'
+alias brc='bin/rails c'
 
 alias notes='vim ~/Documents/obsidian-notes/notes'
 
@@ -76,6 +77,8 @@ alias dcrspec='docker-compose run --rm app rspec'
 
 alias bnr='bin/next rspec'
 alias br='bin/rspec'
+alias up='dev up'
+alias down='dev down'
 
 # override avit's prompt because git is super slow in themis on catalina :/
 # Load version control information
