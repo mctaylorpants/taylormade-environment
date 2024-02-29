@@ -5,8 +5,8 @@ filetype off
 let g:polyglot_disabled = ['markdown', 'md']
 call plug#begin()
 " Colors
-
 Plug 'olimorris/onedarkpro.nvim'
+
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -92,7 +92,7 @@ lua <<EOF
   }
 
   -- vim.o.background = "light" -- enabling this breaks the custom highlights below
-  vim.cmd("colorscheme onedarkpro")
+  vim.cmd("colorscheme onelight")
   require("onedarkpro").setup {
     caching = true,
     theme = "onelight",
