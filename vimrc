@@ -17,6 +17,7 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'janko-m/vim-test'
 Plug 'github/copilot.vim'
+let g:copilot_node_command = "~/.nodenv/versions/20.11.1/bin/node"
 command Copilot enable
 
 " Tools - Search
