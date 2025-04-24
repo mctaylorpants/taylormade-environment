@@ -70,7 +70,10 @@ setopt nomenucomplete
 bindkey '^S' down-line-or-history # ctrl+s
 bindkey '^A' up-line-or-history   # ctrl+a
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+# (i.e. ctrl+r to search command history)
+source <(fzf --zsh)
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --color=light'
 
 alias dc='docker-compose'
 alias dcrspec='docker-compose run --rm app rspec'
