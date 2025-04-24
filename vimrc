@@ -48,23 +48,22 @@ Plug 'mattn/emmet-vim'
 Plug 'sheerun/vim-polyglot'
 
 " coc.vim only works in Node 12+
-if system("node --version") =~ '^v[1-9][2-9]'
-  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-  Plug 'neoclide/coc-eslint'
-  Plug 'neoclide/coc-tslint-plugin'
-  Plug 'neoclide/coc-prettier'
-endif
+let g:coc_node_path = "~/.nodenv/versions/20.11.1/bin/node"
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neoclide/coc-eslint'
+Plug 'neoclide/coc-tslint-plugin'
+Plug 'neoclide/coc-prettier'
 
 Plug 'ojroques/vim-oscyank'
 
 call plug#end()
 
-autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif
+autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankRegister "' | endif
 
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
-  \ 'coc-prettier',
   \ 'coc-eslint',
+  \ 'coc-prettier',
   \ 'coc-tslint-plugin'
   \ ]
 
@@ -233,6 +232,11 @@ let g:jsx_ext_required = 0
 
 " neomake
 call neomake#configure#automake('rw', 1000)
+let g:neomake_ruby_rubocop_maker = {
+            \ 'exe': 'bundle',
+            \ 'args': ['exec', 'rubocop'],
+            \ 'errorformat': '%E%f:%l:%c: %m',
+            \ }
 
 command Readme set linebreak wrap
 command Filename !echo % | pbcopy

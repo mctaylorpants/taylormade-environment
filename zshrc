@@ -19,6 +19,9 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 
+
+gitmain() { git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4 }
+
 alias zshconfig="vim ~/.zshrc"
 alias vim='nvim'
 alias gcb='git checkout $(git for-each-ref --sort=-committerdate --count=50 --format="%(refname:short)" refs/heads/ | selecta)'
@@ -39,14 +42,13 @@ alias gP='git pull origin $(current_branch)'
 alias gpoh='git push origin $(current_branch)'
 alias gco='git checkout'
 alias gf='git fetch'
-alias gfo'git fetch && git checkout'
-alias grbm='echo "Updating master..." && gco master; git pull && gco - && grb master'
+alias grbm='echo "Updating main branch..." && gco $(gitmain); git pull && gco - && grb $(gitmain)'
 alias ghrbm='git reset --hard HEAD~100 && grbm'
-alias gmm='echo "Updating master..." && gco master && git pull && gco - && git merge master'
-alias gnb='git checkout master && git pull && git checkout -b '
+alias gmm='echo "Updating main branch..." && gco $(gitmain) && git pull && gco - && git merge $(gitmain)'
+alias gnb='git checkout $(gitmain) && git pull && git checkout -b '
 alias grbi='git rebase --interactive --autosquash' # override the default grbi in the git zsh plugin
 alias grh='git reset --hard'
-alias gcom='git checkout master && gP'
+alias gcom='git checkout $(gitmain) && gP'
 alias prune='git-prune-local'
 alias wip='git commit --no-verify -m "WIP"'
 
@@ -57,6 +59,8 @@ alias bn='IGNORE_PENDING_RAILS_NEXT=1 bin/next'
 alias bo='bundle open'
 alias bno='bin/next bundle open'
 alias brc='bin/rails c'
+alias dbm='bin/rails db:migrate'
+alias dbr='bin/rails db:rollback'
 
 alias notes='vim ~/Documents/obsidian-notes/notes'
 
@@ -75,8 +79,8 @@ bindkey '^A' up-line-or-history   # ctrl+a
 source <(fzf --zsh)
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --color=light'
 
-alias dc='docker-compose'
-alias dcrspec='docker-compose run --rm app rspec'
+alias dc='docker compose'
+alias dcrspec='docker compose run --rm app rspec'
 
 alias bnr='bin/next rspec'
 alias br='bin/rspec'
@@ -89,9 +93,10 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:git*' formats "[%b]"
 precmd() { vcs_info }
 
+NEWLINE=$'\n'
 export BAT_THEME="Solarized (light)"
 export PROMPT='
-${_current_dir}${vcs_info_msg_0_} %{$fg[red]%}$> %{$reset_color%}'
+${_current_dir}${vcs_info_msg_0_} ${NEWLINE}%{$fg[red]%}$> %{$reset_color%}'
 export RPROMPT=''
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
