@@ -1,7 +1,14 @@
+bindkey -e
+
+source $HOME/.clio_profile
+
+eval "$(dev _hook)"
+
 export ZSH=$HOME/.oh-my-zsh
 
 export PATH="$HOME/Library/Python/2.7/bin:$PATH" # for the aws eb CLI
 export PATH="/usr/local/sbin:$PATH" # recommended by `brew doctor`
+export PATH="$HOME/.local/bin:$PATH"
 
 plugins=(git docker)
 
@@ -17,7 +24,8 @@ zle_highlight=( default:fg=black )
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR='nvim'
+
+export EDITOR='cursor'
 
 
 gitmain() { git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4 }
@@ -38,8 +46,8 @@ alias gcm='git commit -m'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gp='git push'
-alias gP='git pull origin $(current_branch)'
-alias gpoh='git push origin $(current_branch)'
+alias gP='git pull origin $(git_current_branch)'
+alias gpoh='git push origin $(git_current_branch)'
 alias gco='git checkout'
 alias gf='git fetch'
 alias grbm='echo "Updating main branch..." && gco $(gitmain); git pull && gco - && grb $(gitmain)'
@@ -61,6 +69,7 @@ alias bno='bin/next bundle open'
 alias brc='bin/rails c'
 alias dbm='bin/rails db:migrate'
 alias dbr='bin/rails db:rollback'
+alias cc='claude'
 
 alias notes='vim ~/Documents/obsidian-notes/notes'
 
@@ -101,4 +110,4 @@ export RPROMPT=''
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-eval "$(dev _hook)"
+[[ -d "/opt/clio/bin/devxp" ]] && export PATH="/opt/clio/bin/devxp:$PATH"

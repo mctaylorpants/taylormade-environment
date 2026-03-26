@@ -16,3 +16,5 @@
   rebase = true
 [fetch]
 	prune = true
+[core]
+	editor = cursor --wait
